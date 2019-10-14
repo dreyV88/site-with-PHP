@@ -32,7 +32,7 @@ include 'pages/header.php';
                 <a href=""><img class="img-responsive img-blog" src="./images/img_blog/<?= $article->image?>" width="60%" alt="<?= $article->titre?>" /></a>
                 <h4><?= $article->titre?></h4>
                 <p style="text-align: justify;"><?= substr(nl2br($article->contenu),0,300)."..."?></p>
-                <a class="btn btn-primary readmore" href="blog-item.html">Lire la suite <i class="fa fa-angle-right"></i></a>
+                <a class="btn btn-primary readmore" href="index.php?page=article&id=<?=$article->idarticle?>">Lire la suite <i class="fa fa-angle-right"></i></a>
               </div>
             </div>
           </div>
