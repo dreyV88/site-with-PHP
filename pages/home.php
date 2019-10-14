@@ -23,3 +23,8 @@ include 'pages/header.php';
         }
     ?>
     </div>
+
+<?php
+include 'pages/footer.php';
+
+?>
