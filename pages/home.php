@@ -14,7 +14,7 @@ include 'pages/header.php';
                     <h5 class="card-title"><?= $article->titre?></h5>
                     <h6 class="card-text"><?= date("d/m/Y à H:i", strtotime($article->dateparution))?> par <?= $article->nom_prenom?> </h6>
                     <p class="card-text" style= "margin-bottom:25px"> <?= substr(nl2br($article->contenu),0,100)."..."?></p>
-                    <a href="index.php?page=post&id=<?= $article->idarticle?>" class="btn btn-primary readmore">En lire plus</a>
+                    <a href="index.php?page=article&id=<?= $article->idarticle?>" class="btn btn-primary readmore">En lire plus</a>
                 </div>
             </div>
         </div>
