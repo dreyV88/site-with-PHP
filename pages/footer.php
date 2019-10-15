@@ -76,7 +76,11 @@
   <script>
     wow = new WOW({}).init();
   </script>
-
+  <?php
+  $pages_js= scandir('functions/');
+  if(in_array($page.'-func.php', $pages_functions)){
+      include 'functions/'.$page. '-func.php';
+  ?>
 </body>
 
 </html>
