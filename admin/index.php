@@ -12,14 +12,14 @@ if (isset($_GET['page']) && !empty($_GET['page'])) { // si on saisit directement
     $page = "dashboard"; // dans le cas ou le visiteur ne remplit rien, il est sur la page home
 }
 
-$pages_functions= scandir('functions/');
+$pages_functions= scandir('./functions/');
 if(in_array($page.'-func.php', $pages_functions)){
     include 'functions/'.$page. '-func.php';
 }
  include 'pages/'.$page.'.php';
 ?>
  <?php
-    $pages_js= scandir('js/');
+    $pages_js= scandir('../js/');
     if(in_array($page.'-func.js', $pages_js)){
     ?>
       <script type="text/javascript" src="js/<?=$page?>-func.js"></script>

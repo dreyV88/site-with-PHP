@@ -15,12 +15,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/jquery.bxslider.css">
-  <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
-  <link rel="stylesheet" href="css/animate.css">
-  <link href="css/stylesheet.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../css/animate.css">
+  <link href="../css/stylesheet.css" rel="stylesheet">
 
   <title>Tableau de bord</title>
 </head>
@@ -48,12 +48,12 @@
           <div class="navbar-collapse collapse">
             <div class="menu">
               <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation"><a href="index.php?page=home" class="<?php if($page =='Dashboard'){echo 'active';}?>">Accueil</a></li>
-                <li role="presentation"><a href="index.php?page=association" class="<?php if($page =='Gestion'){echo 'active';}?>">Gestion</a>
+                <li role="presentation"><a href="index.php?page=dashboard" class="<?php if($page =='Dashboard'){echo 'active';}?>">Accueil</a></li>
+                <li role="presentation"><a href="index.php?page=gestion" class="<?php if($page =='Gestion'){echo 'active';}?>">Gestion</a>
                   <!-- <div role="presentation"><a href="services.html">Nos Objectifs</a></div></li> -->
-                <li role="presentation"><a href="index.php?page=actus" class="<?php if($page =='Modo'){echo 'active';}?>">Moderations</a></li>
-                <li role="presentation"><a href="index.php?page=galerie" class="<?php if($page =='article'){echo 'active';}?>">Articles</a></li>
-                <li role="presentation"><a href="index.php?page=contact" class="<?php if($page =='connexion'){echo 'active';}?>">Connexion/Déconnexion</a></li>
+                <li role="presentation"><a href="index.php?page=modo" class="<?php if($page =='Modo'){echo 'active';}?>">Moderations</a></li>
+                <li role="presentation"><a href="index.php?page=article" class="<?php if($page =='article'){echo 'active';}?>">Articles</a></li>
+                <li role="presentation"><a href="index.php?page=connexion" class="<?php if($page =='connexion'){echo 'active';}?>">Connexion/Déconnexion</a></li>
               </ul>
             </div>
           </div>
