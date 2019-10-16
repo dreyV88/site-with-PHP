@@ -13,6 +13,7 @@ function get_article(){
     JOIN users
     ON articles.idusers = users.idusers
     WHERE articles.idarticle='{$_GET['id']}'
+    AND articles.publier='1'
     ");
 
     $resultat= $req->fetchObject();
@@ -30,8 +31,20 @@ function commentaire($login,$email,$contenu){
     );
 
     $sql="INSERT INTO commentaire (login, email, contenu, idarticle, date) VALUES(:logs, :email, :com, :postId, NOW())";
-    var_dump($sql);
+    
     $req= $db->prepare($sql);
     $req->execute($comment);
 }
+
+function get_comments(){
+    global $db;
+
+    $req = $db->query("SELECT * FROM commentaire WHERE idarticle ='{$_GET['id']}' ORDER BY date DESC");
+    $results=[];
+    while($rows = $req->fetchObject()){
+        $results []= $rows;
+    }
+    return $results;
+}
+
 ?>

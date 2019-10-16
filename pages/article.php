@@ -9,7 +9,6 @@ if ($article==false){
     </div>
     <div class= "parallax-container">
         <div class="parallax" style="background-image:url(./images/img_blog/<?= $article->image?>)">
-            <!-- <img src="./images/img_blog/<?= $article->image?>" alt="<?=$article->titre?>"/> -->
         </div>
     </div>
 
@@ -22,6 +21,24 @@ if ($article==false){
 ?>
 
 <hr>
+<h4>Commentaires: </h4>
+<?php
+$reponses = get_comments();
+if ($reponses !=false){
+  foreach($reponses as $reponse){
+  ?>
+    <blockquote>
+        <strong><?= $reponse->login ?> (<?= date("d/m/Y", strtotime($reponse->date))?>)</strong>
+        <p><?=nl2br($reponse->contenu);?></p>
+    </blockquote>
+    <?php  
+    }  
+    var_dump($reponses);
+} else {echo "<p> Aucun commentaire n'a été fait...Soyez le premier!</p>";}
+
+
+
+?>
 
 <h4>Commenter: </h4>
 <?php
