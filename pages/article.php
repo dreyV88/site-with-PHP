@@ -26,12 +26,12 @@ if ($article==false){
 <h4>Commenter: </h4>
 <?php
 if(isset($_POST['submit'])){
-    $name = htmlspecialchars(trim($_POST['login']));
+    $login = htmlspecialchars(trim($_POST['login']));// le nom de la variable doit correspondre au nom donné à "name" dans le formulaire
     $email = htmlspecialchars(trim($_POST['email']));
     $contenu = htmlspecialchars(trim($_POST['contenu']));
     $errors=[];
 
-    if(empty($name)||empty($email)||empty($contenu)){
+    if(empty($login)||empty($email)||empty($contenu)){
         $errors['vide']= "il y a un/des champ/s vide/s";
     }else{
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -51,12 +51,12 @@ if(isset($_POST['submit'])){
         </div>
         <?php
     }else{
-        commentaire($log,$mail,$comms);
-        /*?>
+        commentaire($login,$email,$contenu);
+        ?>
             <script>
                 window.location.replace("index.php?page=article&id=<?= $_GET['id']?>");
             </script>
-        <?php*/
+        <?php
     }
 }
 ?>

@@ -23,13 +23,13 @@ function commentaire($login,$email,$contenu){
     global $db;
 
     $comment=array(
-        'login' =>$login,
+        'logs' =>$login,
         'email' =>$email,
         'com'   =>$contenu,
         'postId' =>$_GET["id"]
     );
 
-    $sql="INSERT INTO commentaire (login, email, contenu, idarticle, date) VALUES(:login, :email, :com, :postId, NOW())";
+    $sql="INSERT INTO commentaire (login, email, contenu, idarticle, date) VALUES(:logs, :email, :com, :postId, NOW())";
     var_dump($sql);
     $req= $db->prepare($sql);
     $req->execute($comment);
