@@ -52,11 +52,11 @@ if(isset($_POST['submit'])){
         <?php
     }else{
         commentaire($log,$mail,$comms);
-        ?>
-        <script>
-        window.location.replace("index.php?page=article&id=<?= $_GET['id']?>");
-        </script>
-        <?php
+        /*?>
+            <script>
+                window.location.replace("index.php?page=article&id=<?= $_GET['id']?>");
+            </script>
+        <?php*/
     }
 }
 ?>

@@ -19,19 +19,19 @@ function get_article(){
     return $resultat;
 }
 
-function commentaire($log,$mail,$comms){
+function commentaire($login,$email,$contenu){
     global $db;
 
-    $com=array(
-        'login' =>$log,
-        'email' =>$mail,
-        'com'   =>$comms,
+    $comment=array(
+        'login' =>$login,
+        'email' =>$email,
+        'com'   =>$contenu,
         'postId' =>$_GET["id"]
     );
 
     $sql="INSERT INTO commentaire (login, email, contenu, idarticle, date) VALUES(:login, :email, :com, :postId, NOW())";
     var_dump($sql);
     $req= $db->prepare($sql);
-    $req->execute($com);
+    $req->execute($comment);
 }
 ?>
