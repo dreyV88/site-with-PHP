@@ -9,3 +9,5 @@ function affiche(){
     }
     return $resultat;
 }
+
+

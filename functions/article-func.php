@@ -18,4 +18,20 @@ function get_article(){
     $resultat= $req->fetchObject();
     return $resultat;
 }
+
+function commentaire($log,$mail,$comms){
+    global $db;
+
+    $com=array(
+        'login' =>$log,
+        'email' =>$mail,
+        'com'   =>$comms,
+        'postId' =>$_GET["id"]
+    );
+
+    $sql="INSERT INTO commentaire (login, email, contenu, idarticle, date) VALUES(:login, :email, :com, :postId, NOW())";
+    var_dump($sql);
+    $req= $db->prepare($sql);
+    $req->execute($com);
+}
 ?>
