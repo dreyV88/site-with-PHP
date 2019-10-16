@@ -1,6 +1,7 @@
 <?php
 
-function get_article(){
+function get_article()
+{
     global $db;
 
     $req = $db->query("SELECT articles.idarticle, 
@@ -16,35 +17,36 @@ function get_article(){
     AND articles.publier='1'
     ");
 
-    $resultat= $req->fetchObject();
+    $resultat = $req->fetchObject();
     return $resultat;
 }
 
-function commentaire($login,$email,$contenu){
+function commentaire($login, $email, $contenu)
+{
     global $db;
 
-    $comment=array(
-        'logs' =>$login,
-        'email' =>$email,
-        'com'   =>$contenu,
-        'postId' =>$_GET["id"]
+    $comment = array(
+        'logs' => $login,
+        'email' => $email,
+        'com'   => $contenu,
+        'postId' => $_GET["id"]
     );
 
-    $sql="INSERT INTO commentaire (login, email, contenu, idarticle, date) VALUES(:logs, :email, :com, :postId, NOW())";
-    
-    $req= $db->prepare($sql);
+    $sql = "INSERT INTO commentaire (login, email, contenu, idarticle, date) VALUES(:logs, :email, :com, :postId, NOW())";
+
+    $req = $db->prepare($sql);
     $req->execute($comment);
 }
 
-function get_comments(){
+function get_comments()
+{
     global $db;
 
     $req = $db->query("SELECT * FROM commentaire WHERE idarticle ='{$_GET['id']}' ORDER BY date DESC");
-    $results=[];
-    while($rows = $req->fetchObject()){
-        $results []= $rows;
+    $results = [];
+
+    while ($rows = $req->fetchObject()) {
+        $results[] = $rows;
     }
     return $results;
 }
-
-?>

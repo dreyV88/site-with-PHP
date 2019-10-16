@@ -476,7 +476,8 @@ body, html {
 ============================ */
 .footer {
 	background:#323d2f;
-	padding:50px;	
+  padding:50px;
+  margin-top:30px;
 }
 
 .footer p {
