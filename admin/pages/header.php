@@ -40,7 +40,7 @@
             </button>
             <div class="navbar-brand">
               <a href="index.php?page=home">
-                <h1><span>Les Amis</span> du clocher </h1>
+                <h1><span>Tableau</span> de bord </h1>
               </a>
             </div>
           </div>

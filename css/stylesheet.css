@@ -465,7 +465,10 @@ body, html {
 .parallax-container{
   height: 320px;
 }
-.blog-content label{
+.blog-content {
+  color: #333 !important;
+}
+label{
   color: #333 !important;
 }
 .bg-warning {
