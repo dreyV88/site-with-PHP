@@ -19,7 +19,28 @@
                                 $errors = [];
                                 if (empty($login) || empty($pwd)) {
                                     $errors['empty'] = "champ(s) manquant";
-                                } else if (is_admin($login, $pwd)) { }
+                                } else if (is_admin($login, $pwd)==0)  //test si les valeurs n'existent pas
+                                {
+                                    $errors['exist'] = "Cet administrateur n'existe pas";
+                                 }
+                                 if (!empty($errors)){
+                                    ?>
+                                    <div class="card bg-warning">
+                                        <div class="card-text text-white">
+                                            <?php
+                                            foreach($errors as $error){
+                                               echo $error. "<br/>";
+                                            }
+                                            
+
+                                            ?>
+                                        </div>
+                                    </div>
+
+                                    <?php
+                                 }else{
+                                     echo "pas d'erreurs";
+                                 }
                             }
                             ?>
                             <div class="input-group form-group">
