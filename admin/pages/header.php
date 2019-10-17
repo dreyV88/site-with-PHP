@@ -53,7 +53,7 @@
                   <!-- <div role="presentation"><a href="services.html">Nos Objectifs</a></div></li> -->
                 <li role="presentation"><a href="index.php?page=modo" class="<?php if($page =='Modo'){echo 'active';}?>">Moderations</a></li>
                 <li role="presentation"><a href="index.php?page=article" class="<?php if($page =='article'){echo 'active';}?>">Articles</a></li>
-                <li role="presentation"><a href="index.php?page=connexion" class="<?php if($page =='connexion'){echo 'active';}?>">Connexion/Déconnexion</a></li>
+                <li role="presentation"><a href="index.php?page=login" class="<?php if($page =='login'){echo 'active';}?>">Connexion/Déconnexion</a></li>
               </ul>
             </div>
           </div>
