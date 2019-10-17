@@ -9,6 +9,8 @@
 // }catch(PDOException $storage){
 //     die ('une erreur est survenue lors de la connexion de la base de données: '.$storage->getMessage());
 // }
+
+session_start();
 $param= [
     'driver'=>'mysql',
     'host'=>'localhost',

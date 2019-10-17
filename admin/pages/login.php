@@ -1,3 +1,9 @@
+<?php
+if(isset($_SESSION['admin'])){
+    header("location:index.php?page=dashboard");
+
+}
+?>
 <?php include 'pages/header.php'
 ?>
 <div class="container">
@@ -15,47 +21,51 @@
                             if (isset($_POST['submit'])) {
                                 $login = htmlspecialchars(trim($_POST['login'])); // htlmspacial evite injection d'HTML et permet la compréhension du mail par les navigateurs et trim coupe au cas ou il y ait des espaces dans le mai
                                 $pwd = htmlspecialchars(trim($_POST['mdp']));
-
                                 $errors = [];
                                 if (empty($login) || empty($pwd)) {
                                     $errors['empty'] = "champ(s) manquant";
                                 } else if (is_admin($login, $pwd) == 0)  //test si les valeurs n'existent pas
                                 {
-                                    $errors['exist'] = "Cet administrateur n'existe pas";
+                                    $errors['existe'] = "Cet administrateur n'existe pas";
                                 }
-                                if (!empty($errors)) {
+                                if (!empty($errors)) { // si le tableau d'erreur n'est pas vide alors j'affiche soit 'empty' soit 'existe'
                                     ?>
-                                    <div class="card bg-warning">
-                                        <div class="card-text text-white">
+                                    <div class="card bg-warning" style="height: 30px">
+                                        <div class="card-body text-center text-white">
+
                                             <?php
                                                     foreach ($errors as $error) {
-                                                        echo $error."<br>";
+                                                        echo $error . "<br>";
                                                     }
 
 
-                                            ?>
+                                                    ?>
+
                                         </div>
                                     </div>
 
+
                             <?php
+
                                 } else {
-                                    echo "pas d'erreurs";
+                                    $_SESSION['admin'] = $login;
+                                    header("location:index.php?page=dashboard");
                                 }
                             }
                             ?>
                             <div class="input-group form-group">
                                 <label for="login">Pseudo</label>
-                                <input type="text" name="login" id="login" class="form-control" >
+                                <input type="text" name="login" id="login" class="form-control">
                             </div>
                             <div class="input-group form-group">
                                 <label for="password">Mot de passe</label>
-                                <input type="password" name="mdp" id="password" class="form-control" >
+                                <input type="password" name="mdp" id="password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>
                                     <input type="checkbox" value="remember-me"> Se souvenir de moi
                                 </label>
-                                <button class="btn btn-primary" type="submit" name= "submit"><i class="'fa fa-user-circle-o' aria-hidden='true'">Connexion</i></button>
+                                <button class="btn btn-primary" type="submit" name="submit"><i class="fa fa-user-circle-o" aria-hidden="true">Connexion</i></button>
                             </div>
                         </div>
                     </div>

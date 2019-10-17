@@ -17,6 +17,7 @@ if(in_array($page.'-func.php', $pages_functions)){
     include 'functions/'.$page. '-func.php';
 }
  include 'pages/'.$page.'.php';
+ 
 ?>
  <?php
     $pages_js= scandir('../js/');
