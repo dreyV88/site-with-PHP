@@ -42,8 +42,8 @@ include 'pages/header.php';
 <?php
 $comments = get_Comments();
 ?>
-<table class="table "style ="color:#575656">
-    <thead >
+<table class="table " style="color:#575656">
+    <thead>
         <tr>
             <th scope="col">Article</th>
             <th scope="col">Commentaire</th>
@@ -51,16 +51,38 @@ $comments = get_Comments();
         </tr>
     </thead>
     <tbody>
-       
-            <?php
-            foreach ($comments as $comment) {
-                ?>
-                <tr scope="row" id="commentaire_<?=$comment->idcom?>">
-                <td ><?=$comment->titre?></td>
-                <td ><?= substr($comment->contenu,0,50);?>...</td>
-                <td >
-                    <a href="#" id="<?=$comment->idcom?>" class=" btn-"></a>
 
+        <?php
+        foreach ($comments as $comment) {
+            ?>
+            <tr scope="row" id="commentaire_<?= $comment->idcom ?>">
+                <td><?= $comment->titre ?></td>
+                <td><?= substr($comment->contenu, 0, 50); ?>...</td>
+                <td>
+                    <a href="#" id="<?= $comment->idcom ?>" class=" btn btn-default btn-circle see_comment"><i class="fa fa-check"></i></a>
+                    <a href="#" id="<?= $comment->idcom ?>" class=" btn btn-danger btn-circle delete_comment"><i class="fa fa-times"></i></a>
+                    <a href="#comment_<?= $comment->idcom ?>" class=" btn btn-info btn-circle" data-toggle="modal" data-target="#modal1"><i class="fa fa-ellipsis-v"></i></a>
+
+
+                    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="#modal1" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><?=$comment->titre?></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <p>Commentaire posté par <strong><?=$comment->login." (".$comment->email.")</strong><br>Le:". date("d/m/Y à H:i",strtotime($comment->date))?></p>
+                            </div>
+                            <div class="modal-footer">
+                                
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
 
                 </td>
             <?php
@@ -68,7 +90,7 @@ $comments = get_Comments();
 
             ?>
 
-        </tr>
+            </tr>
     </tbody>
 
 </table>

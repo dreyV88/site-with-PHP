@@ -65,7 +65,7 @@ if(isset($_SESSION['admin'])){
                                 <label>
                                     <input type="checkbox" value="remember-me"> Se souvenir de moi
                                 </label>
-                                <button class="btn btn-primary" type="submit" name="submit"><i class="fa fa-user-circle-o" aria-hidden="true">Connexion</i></button>
+                                <button class="btn btn-primary" type="submit" name="submit"><i class="fa fa-user">Connexion</i></button>
                             </div>
                         </div>
                     </div>
