@@ -22,13 +22,13 @@ include 'pages/header.php';
     foreach ($tables as $table_name => $table) { // foreach parcour le tableau dont la clé est le nom (publications) et dont le contenu est dans la base de donnée (articles)
         ?>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card bg-<?= getColor($table, $colors) ?>">
+            <div class="card bg-<?= getColor($table, $colors) ?>" style="border-radius: 4px; padding: 3px 0.8rem; margin: 0 1.2rem;">
                 <div class="card-body text-white">
                     <span class="card-title"><?= $table_name ?></span>
                     <?php
                         $nbrInTable = inTable($table);
                         ?>
-                    <h4><?= $nbrInTable[0] ?></h4>
+                    <h4 style="color: white;"><?= $nbrInTable[0] ?></h4>
                 </div>
             </div>
         </div>
