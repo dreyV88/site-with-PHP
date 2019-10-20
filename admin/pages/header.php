@@ -57,7 +57,9 @@ if($page !='login' && !isset($_SESSION['admin'])){
                   <!-- <div role="presentation"><a href="services.html">Nos Objectifs</a></div></li> -->
                 <li role="presentation"><a href="index.php?page=modo" class="<?php if($page =='Modo'){echo 'active';}?>">Moderations</a></li>
                 <li role="presentation"><a href="index.php?page=article" class="<?php if($page =='article'){echo 'active';}?>">Articles</a></li>
-                <li role="presentation"><a href="index.php?page=login" class="<?php if($page =='login'){echo 'active';}?>">Connexion/Déconnexion</a></li>
+                <li role="presentation"><a href="index.php?page=login" class="<?php if($page =='login'){echo 'active';}?>">Connexion</a><li role="presentation"><a href="index.php?page=logout" class="<?php if($page =='logout'){echo 'active';}?>">Déconnexion</a></li>
+                <li role="presentation"><a href="../index.php?page=home" class="<?php if($page =='article'){echo 'active';}?>">Quitter</a></li>
+
               </ul>
             </div>
           </div>
