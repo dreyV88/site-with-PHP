@@ -1,7 +1,8 @@
-$(document).ready(function () {
+// $(document).ready(function () {
     $(".see_comment").click(function () {
         var iD = $(this).attr("id");
-        $.post('./ajax/see_comment.php', { id: iD }, function () {
+        $.post('ajax/see_comment.php', { id: iD }, function () {
+            // alert("je fonctionne"+iD);
             $("#commentaire_" + iD).hide();
 
         });
@@ -16,4 +17,4 @@ $(document).ready(function () {
         });
 
     });
-});
+// });
