@@ -13,11 +13,11 @@ function post($titre, $content, $publier)
     
 $sql= "INSERT INTO articles (titre, contenu, dateparution,idusers,publier) 
 VALUES (:titre, :contenu, NOW(), :auteur, :public)";
-
+var_dump($sql);
 $req= $db->prepare($sql);
-echo $sql;
-$req->execute($stockPost);
 
-$id= $db->lastInsertId('idarticle');
-header("location:index.php?page=article&idarticle=".$id);
+$req->execute($stockPost);
+var_dump($stockPost);
+// $id= $db->lastInsertId($sql);
+// header("location:index.php?page=article&idarticle=".$id);
 }
