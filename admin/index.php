@@ -1,8 +1,6 @@
 <?php
 error_reporting(E_ERROR);
-// if ($page != 'login' && !isset($_SESSION['admin']) && $_HEADERS['HTTP_REFERER'] == '/admin/index.php?page=dashboard')) {
-//     header('location: index.php?page=login');
-//   }
+
 include '../functions/main-func.php';
 $db = connexionDB($param);
 
@@ -14,7 +12,7 @@ if (isset($_GET['page']) && !empty($_GET['page'])) { // si on saisit directement
     $page = "error"; // sinon c'est une page erreur
   }
 } else {
-  $page = "login"; // dans le cas ou le visiteur ne remplit rien, il est sur la page home
+  $page = "dashboard"; // dans le cas ou le visiteur ne remplit rien, il est sur la page home
 }
 
 $pages_functions = scandir('./functions/');
