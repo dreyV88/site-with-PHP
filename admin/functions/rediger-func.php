@@ -34,3 +34,17 @@ var_dump($stockPost);
 // $id= $db->lastInsertId($sql);
 // header("location:index.php?page=article&idarticle=".$id);
 }
+
+function post_img($tmp_name, $extension){
+    global $db;
+    $id = $db->lastInsertId();
+    $i =[
+        'id'=> $id,
+        'image'=>$id.$extension
+    ];
+    $sql="UPDATE articles SET image= :image WHERE id=:id";
+    $req= $db->prepare($sql);
+    $req->execute($i);
+    move_uploaded_file($tmp_name, "../images/img_blog".$id.$extension);
+    header("location:index.php?page=article&idarticle=".$id);
+}

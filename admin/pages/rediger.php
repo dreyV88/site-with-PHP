@@ -8,7 +8,7 @@ if (isset($_POST['post'])) {
     $content = htmlspecialchars(trim($_POST['contenu']));
     $publier = htmlspecialchars(trim($_POST['publier']));
     // die(var_dump($_POST));
-   
+
     $errors = [];
     if (empty($titre) || empty($content)) {
         $errors['empty'] = "veuillez remplir tous les champs";
@@ -37,8 +37,15 @@ if (isset($_POST['post'])) {
             </div>
         </div>
 <?php
-    }else{
+    } else {
         post($titre, $content, $publier);
+        if (!empty($_FILES['image']['name'])) {
+            post_img($_FILES['image']['tmpname'], $extension);
+         } else {
+            // $id= $db->lastInsertId($sql);
+            // header("location:index.php?page=article&idarticle=".$id);
+
+        }
     }
 }
 ?>
