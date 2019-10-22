@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ERROR);
-// if ($page != 'login' && !isset($_SESSION['admin'])) {
+// if ($page != 'login' && !isset($_SESSION['admin']) && $_HEADERS['HTTP_REFERER'] == '/admin/index.php?page=dashboard')) {
 //     header('location: index.php?page=login');
 //   }
 include '../functions/main-func.php';
