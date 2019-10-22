@@ -45,7 +45,7 @@ if (isset($_POST['post'])) {
             post_img($_FILES['image']['tmpname'], $extension);
          } else {
             // $id= $db->lastInsertId($sql);
-            // header("location:index.php?page=article&idarticle=".$id);
+            // header('location: index.php?page=article&idarticle='.$id);
 
         }
     }

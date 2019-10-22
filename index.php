@@ -1,4 +1,5 @@
 <?php
+
 include 'functions/main-func.php';
 $db = connexionDB($param);
 $pages = scandir('pages/'); //scandir scan le contenu d'un dossier

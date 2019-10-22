@@ -1,9 +1,8 @@
-<?php
-if (isset($_SESSION['admin'])) {
-    header("location:index.php?page=dashboard");
-}
-?>
-<?php include 'pages/header.php'
+
+<?php 
+if (isset($_SESSION['admin'])){
+   header('location: index.php?page=dashboard');}
+include 'pages/header.php'
 ?>
 <div class="container">
     <div class="card col-lg-4 col-lg-offset-5 col-md-6 col-md-offset-3 col-sm-12 ">
@@ -49,7 +48,7 @@ if (isset($_SESSION['admin'])) {
                                     // après tous les test si le login et mdp sont dans la BDD je peux accéder au dashboard
                                 } else {
                                     $_SESSION['admin'] = $login;
-                                    header('location:index.php?page=dashboard');
+                                    header('location: index.php?page=dashboard');
                                 }
                             }
                             ?>

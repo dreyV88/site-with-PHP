@@ -1,9 +1,4 @@
-<?php
-//si je ne suis pas loguer je ne peux acceder au reste du site
-if ($page != 'login' && !isset($_SESSION['admin'])) {
-  header("location:index.php?page=login");
-}
-?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -49,7 +44,7 @@ if ($page != 'login' && !isset($_SESSION['admin'])) {
               <li role="presentation"><a href="index.php?page=rediger" class="<?php if ($page == 'rediger') {echo 'active';} ?>">Articles</a></li>
               <li role="presentation"><a href="index.php?page=login" class="<?php if ($page == 'login') {echo 'active';} ?>">Connexion</a>
               <li role="presentation"><a href="index.php?page=logout" class="<?php if ($page == 'logout') {echo 'active';} ?>">Déconnexion</a></li>
-              <li role="presentation"><a href="../index.php?page=home" class="<?php if ($page == 'article') {echo 'active'; } ?>">Quitter</a></li>
+              <li role="presentation"><a href="../index.php?page=home">Quitter</a></li>
             </ul>
           </div>
 
@@ -64,7 +59,7 @@ if ($page != 'login' && !isset($_SESSION['admin'])) {
                 <li role="presentation"><a href="index.php?page=rediger" class="<?php if ($page == 'rediger') {echo 'active';} ?>"><i class="glyphicon glyphicon-pencil"></i></a></li>
                 <li role="presentation"><a href="index.php?page=login" class="<?php if ($page == 'login') {echo 'active';} ?>"><i class="glyphicon glyphicon-log-in"></i></a>
                 <li role="presentation"><a href="index.php?page=logout" class="<?php if ($page == 'logout') { echo 'active';} ?>"><i class="glyphicon glyphicon-log-out"></i></a></li>
-                <li role="presentation"><a href="../index.php?page=home" class="<?php if ($page == 'article') {echo 'active';} ?>"><i class="fa fa-door-open"></i></a></li>
+                <li role="presentation"><a href="../index.php?page=home"><i class="fa fa-door-open"></i>quitter</a></li>
 
               </ul>
             </div>

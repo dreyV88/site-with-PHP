@@ -116,6 +116,7 @@ $comments = get_Comments();
 <?php
 var_dump($_SESSION);
 ?>
+toto
 </pre>
 <?php
 include 'pages/footer.php';
