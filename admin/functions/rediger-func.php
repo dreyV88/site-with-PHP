@@ -3,7 +3,20 @@
 function post($titre, $content, $publier)
 {
    global $db; 
-   
+//    function getIdSession(){
+//     global $db; 
+//     $req1= $db->query("SELECT idusers FROM USERS WHERE login ='{$_SESSION['admin']}'");
+//     $results = [];
+
+  
+//     while ($rows = $req1->fetchObject()) {
+//         $results[] = $rows;
+//     }
+//     return $results;
+//     var_dump($results);
+// }
+//    $sess=getIdSession();
+//    var_dump($sess);
    $stockPost = [
         'titre' => $titre,
         'contenu' => $content,
