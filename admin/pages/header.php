@@ -1,4 +1,5 @@
 <?php
+//si je ne suis pas loguer je ne peux acceder au reste du site
 if ($page != 'login' && !isset($_SESSION['admin'])) {
   header("location:index.php?page=login");
 }

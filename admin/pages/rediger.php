@@ -1,7 +1,7 @@
 <?php
 include "header.php";
 ?>
-
+ <!-- teste le contenu -->
 <?php
 if (isset($_POST['post'])) {
     $titre = htmlspecialchars(trim($_POST['titre']));
@@ -13,6 +13,7 @@ if (isset($_POST['post'])) {
     if (empty($titre) || empty($content)) {
         $errors['empty'] = "veuillez remplir tous les champs";
     }
+    // recupère et teste l'extention d'image
     if (!empty($_FILES['image']['name'])) { // $files est un tableau donc je récupère l'image et son nom
         $fichier = $_FILES['image']['name'];
         $extension = ['.png', '.jpg', '.jpeg', '.gif', 'PNG', '.JPG', '.JPEG', '.GIF'];
@@ -37,6 +38,7 @@ if (isset($_POST['post'])) {
             </div>
         </div>
 <?php
+// teste s'il ya une image ou non pour soit uploader img 1er cas soit mettre l'image par défaut
     } else {
         post($titre, $content, $publier);
         if (!empty($_FILES['image']['name'])) {

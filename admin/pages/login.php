@@ -1,7 +1,6 @@
 <?php
-if(isset($_SESSION['admin'])){
+if (isset($_SESSION['admin'])) {
     header("location:index.php?page=dashboard");
-
 }
 ?>
 <?php include 'pages/header.php'
@@ -17,18 +16,21 @@ if(isset($_SESSION['admin'])){
                     <div class="input-group form-group">
                         <div class="row">
                             <h3 class="card-title font-weight-normal">Se connecter</h3>
+                            <!-- tester si on a rempli les champs -->
                             <?php
                             if (isset($_POST['submit'])) {
-                                $login = htmlspecialchars(trim($_POST['login'])); // htlmspacial evite injection d'HTML et permet la compréhension du mail par les navigateurs et trim coupe au cas ou il y ait des espaces dans le mai
+                                // htlmspacial evite injection d'HTML et permet la compréhension du mail par les navigateurs et trim coupe au cas ou il y ait des espaces dans le mai
+                                $login = htmlspecialchars(trim($_POST['login']));
                                 $pwd = htmlspecialchars(trim($_POST['mdp']));
                                 $errors = [];
                                 if (empty($login) || empty($pwd)) {
                                     $errors['empty'] = "champ(s) manquant";
-                                } else if (is_admin($login, $pwd) == 0)  //test si les valeurs n'existent pas
-                                {
+                                    //test si les valeurs n'existent pas
+                                } else if (is_admin($login, $pwd) == 0) {
                                     $errors['existe'] = "Cet administrateur n'existe pas";
                                 }
-                                if (!empty($errors)) { // si le tableau d'erreur n'est pas vide alors j'affiche soit 'empty' soit 'existe'
+                                // si le tableau d'erreur n'est pas vide alors j'affiche soit 'empty' soit 'existe'
+                                if (!empty($errors)) {
                                     ?>
                                     <div class="card bg-warning" style="height: 30px">
                                         <div class="card-body text-center text-white">
@@ -38,18 +40,16 @@ if(isset($_SESSION['admin'])){
                                                         echo $error . "<br>";
                                                     }
 
-
                                                     ?>
 
                                         </div>
                                     </div>
 
-
                             <?php
-
+                                    // après tous les test si le login et mdp sont dans la BDD je peux accéder au dashboard
                                 } else {
                                     $_SESSION['admin'] = $login;
-                                    header("location:index.php?page=dashboard");
+                                    header('location:index.php?page=dashboard');
                                 }
                             }
                             ?>
@@ -65,7 +65,7 @@ if(isset($_SESSION['admin'])){
                                 <label>
                                     <input type="checkbox" value="remember-me"> Se souvenir de moi
                                 </label>
-                                <button class="btn btn-primary" type="submit" name="submit"><i class="fa fa-user">Connexion</i></button>
+                                <button class="btn btn-primary" type="submit" name="submit"><i class="fa fa-user"> Connexion</i></button>
                             </div>
                         </div>
                     </div>
