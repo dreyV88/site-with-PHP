@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include 'header.php';
 ?>
  <!-- teste le contenu -->
 <?php
@@ -16,7 +16,7 @@ if (isset($_POST['post'])) {
     // recupère et teste l'extention d'image
     if (!empty($_FILES['image']['name'])) { // $files est un tableau donc je récupère l'image et son nom
         $fichier = $_FILES['image']['name'];
-        $extension = ['.png', '.jpg', '.jpeg', '.gif', 'PNG', '.JPG', '.JPEG', '.GIF'];
+        $extension = ['.png', '.jpg', '.jpeg', '.gif', '.PNG', '.JPG', '.JPEG', '.GIF'];
         $extention = strrchr($fichier, '.');
         if (!in_array($extention, $extension)) {
             $errors['image'] = "l'extension de l'image n'est pas pris en charge";
@@ -42,10 +42,10 @@ if (isset($_POST['post'])) {
     } else {
         post($titre, $content, $publier);
         if (!empty($_FILES['image']['name'])) {
-            post_img($_FILES['image']['tmpname'], $extension);
+            post_img($_FILES['image']['tmp_name'], $extension);
          } else {
-            // $id= $db->lastInsertId($sql);
-            // header('location: index.php?page=article&idarticle='.$id);
+            $id= $db->lastInsertId();
+            header('location: index.php?page=article&idarticle='.$id);
 
         }
     }

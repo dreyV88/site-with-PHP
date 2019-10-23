@@ -29,12 +29,12 @@ function post($titre, $content, $publier)
     $req->execute($stockPost);
     // var_dump($db->errorInfo());
 
-    if ($db->errorCode() != 0) {
-        header("location: erro.php");
-    } else {
-        $id = $db->lastInsertId($sql);
-        header('location: index.php?page=article&idarticle=' . $id);
-    }
+    // if ($db->errorCode() != 0) {
+    //     header("location: erro.php");
+    // } else {
+    //     $id = $db->lastInsertId($sql);
+    //     header('location: index.php?page=article&idarticle=' . $id);
+    // }
 }
 
 function post_img($tmp_name, $extension)
@@ -43,11 +43,13 @@ function post_img($tmp_name, $extension)
     $id = $db->lastInsertId();
     $i = [
         'id' => $id,
-        'image' => $id . $extension
+        'img' => $id.$extension
     ];
-    $sql = "UPDATE articles SET image= :image WHERE id=:id";
+    $sql = "UPDATE articles SET image= :img WHERE id=:id";
     $req = $db->prepare($sql);
     $req->execute($i);
-    move_uploaded_file($tmp_name, "../images/img_blog" . $id . $extension);
-    header('location: index.php?page=article&idarticle=' . $id);
+    var_dump($db->errorCode());
+    move_uploaded_file($tmp_name, "../images/img_blog/" . $id.$extension);
+    var_dump($_FILES["file"]["error"]);
+    // header('location: index.php?page=article&idarticle=' . $id);
 }
