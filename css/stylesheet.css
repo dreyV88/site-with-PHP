@@ -618,7 +618,7 @@ a.scrollup:hover{
   font-size: 12px!important;
   line-height: 1.42857!important;
 }
-/* .switch {
+ .switch {
   position: relative;
   display: inline-block;
   width: 60px;
@@ -676,4 +676,4 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-} */
+} 

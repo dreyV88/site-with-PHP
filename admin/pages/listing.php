@@ -18,10 +18,10 @@ include 'pages/header.php';
                         <div class="row">
 
                             <div class="col-sm-12 blog-content">
-                                <a href=""><img class="img-responsive img-blog" src="./images/img_blog/<?= $article->image ?>" width="60%" alt="<?= $article->titre ?>" /></a>
+                                <a href=""><img class="img-responsive img-blog" src="../images/img_blog/<?= $article->image ?>" width="60%" alt="<?= $article->titre ?>" /></a>
                                 <h4><?= $article->titre ." " ?><?php echo($article->publier=='0')?'<i class="glyphicon glyphicon-lock"></i>':''?></h4>
                                 <p style="text-align: justify;"><?= substr(nl2br($article->contenu), 0, 300) . "..." ?></p>
-                                <a class="btn btn-primary readmore" href="index.php?page=article&id=<?= $article->idarticle ?>">Lire la suite <i class="fa fa-angle-right"></i></a>
+                                <a class="btn btn-primary readmore" href="index.php?page=article&id=<?= $article->idarticle ?>">Modifier <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
