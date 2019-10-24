@@ -46,9 +46,10 @@ function modifier($titre, $content, $publier,$id)
 
     $sql = "UPDATE articles 
     SET titre=:titre, contenu=:contenu,  date_modification= NOW(), idusers=:auteur, publier=:public 
-    WHERE idarticle=:id)";
-
+    WHERE idarticle=:id";
+//  var_dump($sql);
     $req = $db->prepare($sql);
-
+   
     $req->execute($stockPost);
+    // var_dump($req);
 }

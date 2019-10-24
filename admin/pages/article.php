@@ -30,8 +30,12 @@ if(isset($_POST["envoyer"])){
         </div>
     <?php
     } else {
-        modifier($titre, $content, $publier, $_GET['id']);    
-       echo "modification réussie!";
+        modifier($titre, $content, $publier, $_GET['id']); 
+        ?>   
+       <script>
+           window.location.replace("index.php?page=article&id=<?= $_GET['id'] ?>")
+       </script>
+       <?php
     }
     
 }
