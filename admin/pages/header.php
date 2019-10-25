@@ -47,7 +47,7 @@ if ($page != 'login' && !isset($_SESSION['admin'])) {
               <li role="presentation"><a href="index.php?page=dashboard" class="<?php if ($page == 'Dashboard') {echo 'active';} ?>">Accueil</i></a></li>
               <li role="presentation"><a href="index.php?page=rediger" class="<?php if ($page == 'rediger') {echo 'active';} ?>">Articles</a></li>
               <li role="presentation"><a href="index.php?page=listing" class="<?php if ($page == 'listing') {echo 'active';} ?>">Listing</a>
-
+              <li role="presentation"><a href="index.php?page=setting" class="<?php if ($page == 'setting') {echo 'active';} ?>">Réglages</a></li>
               <li role="presentation"><a href="index.php?page=login" class="<?php if ($page == 'login') {echo 'active';} ?>">Connexion</a>
               <li role="presentation"><a href="index.php?page=logout" class="<?php if ($page == 'logout') {echo 'active';} ?>">Déconnexion</a></li>
               <li role="presentation"><a href="../index.php?page=home">Quitter</a></li>
@@ -60,7 +60,7 @@ if ($page != 'login' && !isset($_SESSION['admin'])) {
               <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation"><a href="index.php?page=dashboard" class="<?php if ($page == 'Dashboard') {echo 'active';} ?>"><i class="glyphicon glyphicon-home"></i></a></li>
                 <li role="presentation"><a href="index.php?page=listing" class="<?php if ($page == 'listing') {echo 'active';} ?>"><i class="glyphicon glyphicon-th-list"></i></a>
-                  <!-- <div role="presentation"><a href="services.html">Nos Objectifs</a></div></li> -->
+                <li role="presentation"><a href="index.php?page=setting" class="<?php if ($page == 'setting') {echo 'active';} ?>"><i class="glyphicon glyphicon-cog"></i></a></li>
                 <li role="presentation"><a href="index.php?page=modo" class="<?php if ($page == 'Modo') {echo 'active';} ?>"><i class="glyphicon glyphicon-flag"></i></a></li>
                 <li role="presentation"><a href="index.php?page=rediger" class="<?php if ($page == 'rediger') {echo 'active';} ?>"><i class="glyphicon glyphicon-pencil"></i></a></li>
                 <li role="presentation"><a href="index.php?page=login" class="<?php if ($page == 'login') {echo 'active';} ?>"><i class="glyphicon glyphicon-log-in"></i></a>
