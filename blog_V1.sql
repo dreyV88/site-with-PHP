@@ -240,7 +240,7 @@ ALTER TABLE `users`
 -- Contraintes pour la table `appartient`
 --
 ALTER TABLE `appartient`
-  ADD CONSTRAINT `appartient_ibfk_1` FOREIGN KEY (`idarticle`) REFERENCES `articles` (`idarticle`);
+  ADD CONSTRAINT `appartient_ibfk_1` FOREIGN KEY (`idarticle`) REFERENCES `articles` (`idarticle`) ON delete 'articles' on update 'articles' ;
 
 --
 -- Contraintes pour la table `articles`
@@ -271,3 +271,5 @@ ALTER TABLE `users`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+TRUNCATE TABLE blog.articles;
