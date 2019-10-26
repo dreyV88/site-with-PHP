@@ -16,9 +16,9 @@ if (isset($_POST['post'])) {
     // recupère et teste l'extention d'image
     if (!empty($_FILES['image']['name'])) { // $files est un tableau donc je récupère l'image et son nom
         $fichier = $_FILES['image']['name'];
-        $extension = ['.png', '.jpg', '.jpeg', '.gif', '.PNG', '.JPG', '.JPEG', '.GIF'];
-        $extention = strrchr($fichier, '.');
-        if (!in_array($extention, $extension)) {
+        $extensions = ['.png', '.jpg', '.jpeg', '.gif', '.PNG', '.JPG', '.JPEG', '.GIF'];
+        $extension = strrchr($fichier, '.');
+        if (!in_array($extension, $extensions)) {
             $errors['image'] = "l'extension de l'image n'est pas pris en charge";
         }
     }
@@ -40,14 +40,18 @@ if (isset($_POST['post'])) {
 <?php
 // teste s'il ya une image ou non pour soit uploader img 1er cas soit mettre l'image par défaut
     } else {
-        post($titre, $content, $publier);
-        if (!empty($_FILES['image']['name'])) {
-            post_img($_FILES['image']['tmp_name'], $extension);
-         } else {
-            $id= $db->lastInsertId();
-            header('location: index.php?page=article&idarticle='.$id);
-
-        }
+        if(post($titre, $content, $publier))
+        {
+            if (!empty($_FILES['image']['name'])) {
+                post_img($_FILES['image']['tmp_name'], $extension);
+            } else {
+//                 $id= $db->lastInsertId();
+//                 header('location: index.php?page=article&idarticle='.$id);
+                var_dump($_FILES, $extension);
+            }
+        }else{
+            echo "erreur publication DB";die;
+        }       
     }
 }
 ?>

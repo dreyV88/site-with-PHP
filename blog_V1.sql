@@ -8,7 +8,7 @@
 -- Version de PHP :  7.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+-- SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -22,11 +22,17 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+-- -----------------------------------------------------
+-- Schema myEventPlan
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `blog` DEFAULT CHARACTER SET utf8 ;
+USE `blog` ;
+
 --
 -- Structure de la table `appartient`
 --
 
-CREATE TABLE `appartient` (
+CREATE TABLE  IF NOT EXISTS `appartient` (
   `idarticle` int(11) NOT NULL,
   `idcategorie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -37,7 +43,7 @@ CREATE TABLE `appartient` (
 -- Structure de la table `articles`
 --
 
-CREATE TABLE `articles` (
+CREATE TABLE IF NOT EXISTS `articles` (
   `idarticle` int(11) NOT NULL,
   `titre` varchar(100) DEFAULT NULL,
   `contenu` text,
@@ -48,21 +54,6 @@ CREATE TABLE `articles` (
   `publier` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `articles`
---
-
-INSERT INTO `articles` (`idarticle`, `titre`, `contenu`, `image`, `dateparution`, `date_modification`, `idusers`, `publier`) VALUES
-(1, 'Test 1er article', 'Alors on teste et on test encore', 'imgpardefaut.jpg', '2019-10-10 18:24:01', '2019-10-14 10:17:45', 1, 1),
-(2, 'Test 2em article', 'Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d\'attente. L\'avantage de le mettre en latin est que l\'opérateur sait au premier coup d\'oeil que la page contenant ces lignes n\'est pas valide, et surtout l\'attention du client n\'est pas dérangée par le contenu, il demeure concentré seulement sur l\'aspect graphique.', 'imgpardefaut.jpg', '2019-10-14 10:24:51', '2019-10-14 10:24:51', 1, 1),
-(3, 'TEST 3', 'Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d\'attente. L\'avantage de le mettre en latin est que l\'opérateur sait au premier coup d\'oeil que la page contenant ces lignes n\'est pas valide, et surtout l\'attention du client n\'est pas dérangée par le contenu, il demeure concentré seulement sur l\'aspect graphique.\r\n\r\nCe texte a pour autre avantage d\'utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l\'inconvénient de ne pas permettre une juste appréciation typographique du résultat final.\r\n\r\nIl circule des centaines de versions différentes du Lorem ipsum, mais ce texte aurait originellement été tiré de l\'ouvrage de Cicéron, De Finibus Bonorum et Malorum (Liber Primus, 32), texte populaire à cette époque, dont l\'une des premières phrases est : « Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... » (« Il n\'existe personne qui aime la souffrance pour elle-même, ni qui la recherche ni qui la veuille pour ce qu\'elle est... »).', 'paysage-nature.jpg', '2019-10-16 13:17:44', '2019-10-16 17:57:29', 1, 1),
-(4, 'rjfxndfnx', '$rows = $req1-&gt;fetchAll(PDO::FETCH_CLASS, \'ArrayObject\');$rows = $req1-&gt;fetchAll(PDO::FETCH_CLASS, \'ArrayObject\');$rows = $req1-&gt;fetchAll(PDO::FETCH_CLASS, \'ArrayObject\');$rows = $req1-&gt;fetchAll(PDO::FETCH_CLASS, \'ArrayObject\');$rows = $req1-&gt;fetchAll(PDO::FETCH_CLASS, \'ArrayObject\');$rows = $req1-&gt;fetchAll(PDO::FETCH_CLASS, \'ArrayObject\');$rows = $req1-&gt;fetchAll(PDO::FETCH_CLASS, \'ArrayObject\');$rows = $req1-&gt;fetchAll(PDO::FETCH_CLASS, \'ArrayObject\');', 'imgpardefaut.jpg', '2019-10-21 20:49:29', '2019-10-21 20:49:29', NULL, 0),
-(5, 'teste depuis BDD', 'rien de folichon\r\n\r\nContrairement Ã  une idÃ©e rÃ©pandue, le faux-texte ne donne mÃªme pas un aperÃ§u rÃ©aliste du gris typographique, en particulier dans le cas des textes justifiÃ©s : en effet, les mots fictifs employÃ©s dans le faux-texte ne faisant Ã©videmment pas partie des dictionnaires des logiciels de PAO, les programmes de cÃ©sure ne peuvent pas effectuer leur travail habituel sur de tels textes. Par consÃ©quent, l\'interlettrage du faux-texte sera toujours quelque peu supÃ©rieur Ã  ce qu\'il aurait Ã©tÃ© avec un texte rÃ©el, qui prÃ©sentera donc un aspect plus sombre et moins lisible que le faux-texte avec lequel le graphiste a effectuÃ© ses essais. Un vrai texte pose aussi des problÃ¨mes de lisibilitÃ© spÃ©cifiques (noms propres, numÃ©ros de tÃ©lÃ©phone, retours Ã  la ligne frÃ©quents, composition des citations en italiques, intertitres de plus de deux lignes...) qu\'on n\'observe jamais dans le faux-texte.\r\n\r\nCA MAAAARCHE!', 'imgpardefaut.jpg', '2019-10-22 10:03:45', '2019-10-24 17:32:50', 1, 1),
-(7, 'zrgrshbc', 'gheurtkyj:k!lMÃ¹lkjhgfdssqsDDQFGDJFGKLHMJ%KMJLGJHFDBSVWC&lt;Qx', 'imgpardefaut.jpg', '2019-10-22 19:15:06', '2019-10-22 19:15:06', 1, 0),
-(9, 'sefvgkv', 'qkdjvqqwij \r\nqcsih ih\r\n ijqviwjn kwn nwx nwnw wb', 'imgpardefaut.jpg', '2019-10-22 23:48:02', '2019-10-22 23:49:09', 1, 0),
-(10, 'test rÃ©daction depuis tableau de bord', 'GÃ©nÃ©ralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a Ã©tÃ© modifiÃ©), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d\'attente. L\'avantage de le mettre en latin est que l\'opÃ©rateur sait au premier coup d\'oeil que la page contenant ces lignes n\'est pas valide, et surtout l\'attention du client n\'est pas dÃ©rangÃ©e par le contenu, il demeure concentrÃ© seulement sur l\'aspect graphique.\r\n\r\nCe texte a pour autre avantage d\'utiliser des mots de longueur variable, essayant de simuler une occupation normale. La mÃ©thode simpliste consistant Ã  copier-coller un court texte plusieurs fois (Â« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte Â») a l\'inconvÃ©nient de ne pas permettre une juste apprÃ©ciation typographique du rÃ©sultat final.\r\n\r\nIl circule des centaines de versions diffÃ©rentes du Lorem ipsum, mais ce texte aurait originellement Ã©tÃ© tirÃ© de l\'ouvrage de CicÃ©ron, De Finibus Bonorum et Malorum (Liber Primus, 32), texte populaire Ã  cette Ã©poque, dont l\'une des premiÃ¨res phrases est : Â« Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... Â» (Â« Il n\'existe personne qui aime la souffrance pour elle-mÃªme, ni qui la recherche ni qui la veuille pour ce qu\'elle est... Â»).\r\n\r\nExpert en utilisabilitÃ© des sites web et des logiciels, Jakob Nielsen souligne que l\'une des limites de l\'utilisation du faux-texte dans la conception de sites web est que ce texte n\'Ã©tant jamais lu, il ne permet pas de vÃ©rifier sa lisibilitÃ© effective. La lecture Ã  l\'Ã©cran Ã©tant plus difficile, cet aspect est pourtant essentiel. Nielsen prÃ©conise donc l\'utilisation de textes reprÃ©sentatifs plutÃ´t que du lorem ipsum. On peut aussi faire remarquer que les formules conÃ§ues avec du faux-texte ont tendance Ã  sous-estimer l\'espace nÃ©cessaire Ã  une titraille immÃ©diatement intelligible, ce qui oblige les rÃ©dactions Ã  formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dÃ©passer l\'espace imparti.', 'imgpardefaut.jpg', '2019-10-23 10:49:47', '2019-10-23 10:49:47', 1, 0);
-
--- --------------------------------------------------------
 
 --
 -- Structure de la table `commentaire`
@@ -78,18 +69,6 @@ CREATE TABLE `commentaire` (
   `idarticle` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `commentaire`
---
-
-INSERT INTO `commentaire` (`idcom`, `login`, `email`, `contenu`, `date`, `modere`, `idarticle`) VALUES
-(1, 'aighlog', 'black_pearl_from971@hotmail.com', 'ohjenaimarre!', '2019-10-16 12:17:15', 0, 2),
-(5, 'aighlog', 'black_pearl_from971@hotmail.com', 'yffcoiuumpl', '2019-10-16 16:31:20', 1, 2),
-(6, 'dreyV88', 'drey@vmail.fr', 'en llive maintenant!', '2019-10-16 16:40:17', 1, 2),
-(7, 'aighlog', 'black_pearl_from971@hotmail.com', 'first!', '2019-10-16 16:42:47', 1, 1),
-(8, 'aighlog', 'black_pearl_from971@hotmail.com', 'et lÃ  je commente comme je veux!', '2019-10-20 15:16:04', 1, 3);
-
--- --------------------------------------------------------
 
 --
 -- Structure de la table `compte`

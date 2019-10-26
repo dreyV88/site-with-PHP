@@ -20,11 +20,11 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/jquery.bxslider.css">
-  <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
-  <link rel="stylesheet" href="css/animate.css">
-  <link href="css/stylesheet.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="./css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="./css/animate.css">
+  <link href="./css/stylesheet.css" rel="stylesheet">
 
   <title>Accueil des Amis du cloché</title>
 </head>

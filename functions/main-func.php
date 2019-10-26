@@ -15,8 +15,10 @@ $param= [
     'driver'=>'mysql',
     'host'=>'localhost',
     'db'=> 'blog',
-    'user'=>'root',
-    'password'=>'root'
+    'user' => 'root',
+    'password' => ''
+    /*'user'=>'root',
+    'password'=>'root'*/
 ];
 function connexionDB($connex){
     $dsn=$connex['driver']. ':host=' . $connex['host'].';dbname=' . $connex['db'];
