@@ -465,7 +465,7 @@ body, html {
 .parallax-container{
   height: 320px;
 }
-.blog-content {
+.blog-content, .rubric-asso li {
   color: #333 !important;
 }
 label{

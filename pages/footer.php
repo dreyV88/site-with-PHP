@@ -3,7 +3,7 @@
       <div class="container">
         <div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.2s">
           <h2>Les amis du clocher</h2>
-          <p>Association dont le but est de participer à la restauration et à la valorisation du patrimoine du village.
+          <p style="color: white;">Association dont le but est de participer à la restauration et à la valorisation du patrimoine du village.
           </p>
 
           <ul class="social-network">
