@@ -3,7 +3,7 @@
 function verif()
 {
     if (isset($_POST['envoyer'])) {
-        
+
         $name = htmlspecialchars(trim($_POST['nom_prenom']));
         $email = htmlspecialchars(trim($_POST['email']));
         $email2 = htmlspecialchars(trim($_POST['email_again']));
@@ -11,7 +11,7 @@ function verif()
         $tokken = tokken(30);
 
         $errors = [];
-        if ( empty($name) || empty($email) || empty($email2)) {
+        if (empty($name) || empty($email) || empty($email2)) {
             $errors['empty'] = "veuillez remplir tous les champs";
         }
         if ($email != $email2) {
@@ -56,44 +56,43 @@ function email_taken($email)
     return $free;
 }
 
-function tokken($length){
-    $chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    return substr(str_shuffle(str_repeat($chars,$length)),0,$length);
+function tokken($length)
+{
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    return substr(str_shuffle(str_repeat($chars, $length)), 0, $length);
 }
-function add_modo($name, $email, $role, $tokken){
+function add_modo($name, $email, $role, $tokken)
+{
     global $db;
     $modo = [
-        'nom'=>$name,
-        'email'=>$email, 
-        'token'=>$tokken,       
-        'role'=>$role   
+        'nom' => $name,
+        'email' => $email,
+        'token' => $tokken,
+        'role' => $role
     ];
-    $sql="INSERT INTO users (nom_prenom, email, tokken, role, idrole) VALUES(:nom, :email,:token, :role, :role)";
-    $req = $db->prepare($sql);   
+    $sql = "INSERT INTO users (nom_prenom, email, tokken, role, idrole) VALUES(:nom, :email,:token, :role, :role)";
+    $req = $db->prepare($sql);
     $req->execute($modo);
 
-    $subject ="Bienvenue sur notre site";
-    $msg='<html lang="en" style="font-family:Georgia, Times New Roman, Times, serif">
+    $subject = "Bienvenue sur notre site";
+    $message = '<html lang="en" style="font-family:Georgia, Times New Roman, Times, serif">
     <head>
         <meta charset="UTF-8">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title> -->
     </head>
     <body>
         Voici vos identifiant et code unique pour acceder   <a href="http://localhost/stage_back/admin/index.php?page=new">au blog</a> <br>
-        identifiant: '.$email.' <br>
-        mot de passe: '.$tokken.' <br>
-        vous êtes: '.$role.' sur notre blog <br>
+        identifiant: ' . $email . ' <br>
+        mot de passe: ' . $tokken . ' <br>
+        vous êtes: ' . $role . ' sur notre blog <br>
         <br> Après avoir inseré ces informations, vous devrez choisir votre login et mot de passe.
         
     </body>
     </html>
     
     ';
-    $header="MIME-version: 1.0\r\n";
-    $header.= "content-type: text/html;charset=UTF-8\r\n";
-    $header.='from: no-reply@blogduclocher.com' . "\r\n". 'Reply-to:contact@blogduclocher.com'. "\r\n";
+    $header = "MIME-Version: 1.0\r\n";
+    $header .= "Content-type: text/html; charset=utf-8\r\n";
+    $header .= 'From: no-reply@blogduclocher.com' . "\r\n" . 'Reply-to:contact@blogduclocher.com' . "\r\n";
 
-    mail($email,$subject,$msg,$header);
+    mail($email, $subject, $message, $header);
 }
