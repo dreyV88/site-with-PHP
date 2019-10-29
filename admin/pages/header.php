@@ -47,7 +47,7 @@ if ($page != 'login' && !isset($_SESSION['admin'])) {
               <li role="presentation"><a href="index.php?page=dashboard" class="<?php if ($page == 'Dashboard') {echo 'active';} ?>">Accueil</i></a></li>
               <li role="presentation"><a href="index.php?page=rediger" class="<?php if ($page == 'rediger') {echo 'active';} ?>">Articles</a></li>
               <li role="presentation"><a href="index.php?page=listing" class="<?php if ($page == 'listing') {echo 'active';} ?>">Listing</a>
-
+              <li role="presentation"><a href="index.php?page=modo" class="<?php if ($page == 'modo') {echo 'active';} ?>">Modération</a>
               <li role="presentation"><a href="index.php?page=login" class="<?php if ($page == 'login') {echo 'active';} ?>">Connexion</a>
               <li role="presentation"><a href="index.php?page=logout" class="<?php if ($page == 'logout') {echo 'active';} ?>">Déconnexion</a></li>
               <li role="presentation"><a href="../index.php?page=home">Quitter</a></li>

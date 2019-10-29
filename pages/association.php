@@ -1,7 +1,7 @@
 <?php
 include 'pages/header.php';
 ?>
-
+<div class="container">
 <div class="row">
     <div class="col-lg-2">
         <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
@@ -133,6 +133,7 @@ include 'pages/header.php';
             </div>
         </div>
     </div>
+</div>
 </div>
 <script>
 
