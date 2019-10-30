@@ -62,6 +62,7 @@
 
       </div>
     </div>
+    </div>
 </footer>
 <script src="../js/jquery-2.1.1.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

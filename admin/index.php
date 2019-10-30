@@ -35,8 +35,8 @@ if (in_array($page . '-func.js', $pages_js)) {
 
 // die();
 // //si je ne suis pas loguer je ne peux acceder au reste du site
-// if ($page != 'login' && !isset($_SESSION['admin'])) {
-//   header('location: index.php?page=login');
-// }else if (isset($_SESSION['admin'])){
-//     header('location: index.php?page=dashboard');
-// }
+if ($page != 'login' && $page !='new'  && !isset($_SESSION['admin'])) {
+  header('location: index.php?page=login');
+}else if (isset($_SESSION['admin'])){
+    header('location: index.php?page=dashboard');
+}

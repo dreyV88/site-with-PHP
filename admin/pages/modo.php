@@ -21,26 +21,19 @@ include 'pages/header.php';
                     </thead>
                     <tbody>
                         <?php
-                        $modos= get_Moderator();
-                        foreach($modos as $modo){
+                        $modos = get_Moderator();
+                        foreach ($modos as $modo) {
                             ?>
-                             <tr>
-                            <td><?=$modo->nom_prenom?></td>
-                            <td><?=$modo->email?></td>
-                            <td><?=$modo->nomrole?></td>
-                            <td><i class="<?php echo(!empty($modo->login)?"glyphicon glyphicon-check":"glyphicon glyphicon-time")?>"></i></td>
-                            
-                        </tr>
+                            <tr>
+                                <td><?= $modo->nom_prenom ?></td>
+                                <td><?= $modo->email ?></td>
+                                <td><?= $modo->nomrole ?></td>
+                                <td><i class="<?php echo (!empty($modo->login) ? "glyphicon glyphicon-check" : "glyphicon glyphicon-time") ?>"></i></td>
+
+                            </tr>
                         <?php
                         }
                         ?>
-                       
-                        <tr>
-                            <td>nom</td>
-                            <td>nom@mail.fr</td>
-                            <td>auteur/</td>
-                            <td><i class="glyphicon glyphicon-check"></i></td>
-                        </tr>
                     </tbody>
                 </table>
 
@@ -95,3 +88,6 @@ include 'pages/header.php';
     </div>
 
 </div>
+<?php
+include 'pages/footer.php';
+?>

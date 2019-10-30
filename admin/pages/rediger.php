@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 ?>
- <!-- teste le contenu -->
+<!-- teste le contenu -->
 <?php
 if (isset($_POST['post'])) {
     $titre = htmlspecialchars(trim($_POST['titre']));
@@ -38,20 +38,20 @@ if (isset($_POST['post'])) {
             </div>
         </div>
 <?php
-// teste s'il ya une image ou non pour soit uploader img 1er cas soit mettre l'image par défaut
+        // teste s'il ya une image ou non pour soit uploader img 1er cas soit mettre l'image par défaut
     } else {
-        if(post($titre, $content, $publier))
-        {
+        if (post($titre, $content, $publier)) {
             if (!empty($_FILES['image']['name'])) {
                 post_img($_FILES['image']['tmp_name'], $extension);
             } else {
-//                 $id= $db->lastInsertId();
-//                 header('location: index.php?page=article&idarticle='.$id);
+                //                 $id= $db->lastInsertId();
+                //                 header('location: index.php?page=article&idarticle='.$id);
                 var_dump($_FILES, $extension);
             }
-        }else{
-            echo "erreur publication DB";die;
-        }       
+        } else {
+            echo "erreur publication DB";
+            die;
+        }
     }
 }
 ?>
@@ -92,11 +92,12 @@ if (isset($_POST['post'])) {
                 <div class="col-sm-6">
                     <button class="btn btn-primary" type="submit" name="post">Envoyer</button>
                 </div>
-
             </div>
-
         </form>
     </div>
 </div>
 
 <?php
+
+include 'pages/footer.php';
+?>

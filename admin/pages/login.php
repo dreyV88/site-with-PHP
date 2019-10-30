@@ -66,6 +66,8 @@ include 'pages/header.php';
                                     <input type="checkbox" value="remember-me"> Se souvenir de moi
                                 </label>
                                 <button class="btn btn-primary" type="submit" name="submit"><i class="fa fa-user"> Connexion</i></button>
+                                <br><p style="text-align:center"> <a href="index.php?page=new">Nouveau modérateur?</a> </p>
+
                             </div>
                         </div>
                     </div>
@@ -75,3 +77,6 @@ include 'pages/header.php';
         </div>
     </div>
 </div>
+<?php
+include 'pages/footer.php';
+?>
