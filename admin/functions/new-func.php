@@ -25,10 +25,11 @@ function take_info()
                         ?>
                     </div>
                 </div>
-            <?php
+<?php
             }else{
                 $_SESSION['admin2']=$email;
-                header('location: index.php?page=log&pass');
+                // var_dump($_SESSION['admin2']);
+                header("location: index.php?page=log&pass");
             }
 
     }
@@ -42,10 +43,12 @@ function is_modo($email, $tokken)
         'password' => ($tokken)
     ];
 
-    $sql = "SELECT email,tokken FROM users WHERE email = :mail AND tokken = :tokken";
+    $sql = "SELECT email,tokken FROM users WHERE email = :mail AND tokken = :password";
 
     $req = $db->prepare($sql);
     $req->execute($a);
+    // var_dump($a);
+    // var_dump($req);
     $existe = $req->rowCount($sql);
     return $existe;
 }

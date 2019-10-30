@@ -28,7 +28,7 @@ include 'pages/header.php';
                            
                             <div class="form-group">
                                 
-                                <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-user"></i> S'enregistrer</button><br><br>
+                                <button class="btn btn-primary" type="submit" name="submit"><i class="glyphicon glyphicon-user"></i> S'enregistrer</button><br><br>
                             <p style="text-align:center"> <a href="index.php?page=login">Déjà Modérateur?</a> </p>
                             </div>
                         </div>

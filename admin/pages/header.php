@@ -1,7 +1,7 @@
 <?php
-if ($page != 'login' && !isset($_SESSION['admin'])) {
-    header('location: index.php?page=login');
-  }
+// if ($page !='new'&& $page != 'login' && !isset($_SESSION['admin'])) {
+//     header('location: index.php?page=login');
+//   }
 ?>
 <!DOCTYPE html>
 <html lang="fr">

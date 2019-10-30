@@ -11,7 +11,7 @@ include 'pages/header.php';
                 <form method="post">
                     <div class="input-group form-group">
                         <div class="row">
-                            <h3 class="card-title font-weight-normal">Veuillez choisir votre login et un mot de passe</h3>
+                            <h3 class="card-title font-weight-normal">Saisir votre login et un mot de passe</h3>
                             
                             <div class="input-group form-group">
                                 <label for="login">login</label>
