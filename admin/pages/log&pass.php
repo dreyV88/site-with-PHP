@@ -9,27 +9,27 @@ include 'pages/header.php';
             </div>
             <div class="card-body">
                 <form method="post">
-                    <?php
-                    take_info();
-                    ?>
                     <div class="input-group form-group">
                         <div class="row">
-                            <h3 class="card-title font-weight-normal">Veuillez vous enregistrer</h3>
+                            <h3 class="card-title font-weight-normal">Veuillez choisir votre login et un mot de passe</h3>
                             
                             <div class="input-group form-group">
-                                <label for="mail">Adresse email</label>
-                                <input type="email" name="email" id="mail" class="form-control" required>
+                                <label for="login">login</label>
+                                <input type="text" name="login" id="login" class="form-control" required>
                             </div>
                             
                             <div class="input-group form-group">
-                                <label for="tok">Mot de passe</label>
-                                <input type="text" name="tokken" id="tok" class="form-control" required>
+                                <label for="password">Mot de passe</label>
+                                <input type="password" name="mdp" id="password" class="form-control" required>
+                            </div>
+                            <div class="input-group form-group">
+                                <label for="password2">Veuillez repeter le mot de passe</label>
+                                <input type="password" name="mdp_again" id="password2" class="form-control" required>
                             </div>
                            
                             <div class="form-group">
                                 
-                                <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-user"></i> S'enregistrer</button><br><br>
-                            <p style="text-align:center"> <a href="index.php?page=login">Déjà Modérateur?</a> </p>
+                                <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-user"></i> Se connecter</button><br><br>
                             </div>
                         </div>
                     </div>
