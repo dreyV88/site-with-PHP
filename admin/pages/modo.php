@@ -7,14 +7,50 @@ include 'pages/header.php';
     <h2>Paramêtres</h2>
     <div class="row">
 
-        <div class="col-sm-6 col-xs-12">
+        <div class="col-sm-6 col-xs-12" style="padding-right: 52px;">
             <h4>Modérateurs</h4>
+            <div class="row">
+                <table class="table " style="color:#575656">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Rôle</th>
+                            <th scope="col">Validé</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $modos= get_Moderator();
+                        foreach($modos as $modo){
+                            ?>
+                             <tr>
+                            <td><?=$modo->nom_prenom?></td>
+                            <td><?=$modo->email?></td>
+                            <td><?=$modo->nomrole?></td>
+                            <td><i class="<?php echo(!empty($modo->login)?"glyphicon glyphicon-check":"glyphicon glyphicon-time")?>"></i></td>
+                            
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                       
+                        <tr>
+                            <td>nom</td>
+                            <td>nom@mail.fr</td>
+                            <td>auteur/</td>
+                            <td><i class="glyphicon glyphicon-check"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
-        <div class="col-sm-6 col-xs-12">
+        <div class="col-sm-6 col-xs-12" style="padding-left:50px">
             <h4>Ajouter un modérateur</h4>
             <?php
             verif();
-            
+
             ?>
 
             <form method="post">
@@ -37,9 +73,9 @@ include 'pages/header.php';
                             <input type="email" name="email_again" id="mail2" class="form-control" required>
                         </div>
                         <div class="form-group col-sm-12">
-                            <label for="role"> role: </label>
+                            <label for="role"> Rôle: </label>
 
-                            <select name="role" id="role">
+                            <select class="custom-select b-block w-100" name="role" id="role">
                                 <option value="1">Administrateur</option>
                                 <option value="2">Auteur</option>
                                 <option value="3">Membre</option>

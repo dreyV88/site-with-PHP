@@ -90,9 +90,26 @@ function add_modo($name, $email, $role, $tokken)
     </html>
     
     ';
-    $header = "MIME-Version: 1.0\r\n";
-    $header .= "Content-type: text/html; charset=utf-8\r\n";
-    $header .= 'From: no-reply@blogduclocher.com' . "\r\n" . 'Reply-to:contact@blogduclocher.com' . "\r\n";
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+    $headers .= 'From: no-reply@blogduclocher.com' . "\r\n" . 'Reply-to:contact@blogduclocher.com' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
-    mail($email, $subject, $message, $header);
+    mail($email, $subject, $message, $headers);
+}
+function get_Moderator()
+{
+    global $db;
+    $req = $db->query("SELECT users.nom_prenom, 
+    users.email, 
+    users.login, 
+    statut.nomrole 
+    FROM users
+    JOIN statut
+    ON users.idrole= statut.idrole     
+    ");
+    $results = [];
+    while ($rows = $req->fetchObject()) {
+        $results[] = $rows;
+    }
+    return $results;
 }
