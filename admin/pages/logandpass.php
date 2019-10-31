@@ -1,5 +1,6 @@
 <?php
 include 'pages/header.php';
+
 ?>
 <div class="container">
     <div class="card col-lg-4 col-lg-offset-5 col-md-6 col-md-offset-3 col-sm-12 ">
@@ -9,6 +10,10 @@ include 'pages/header.php';
             </div>
             <div class="card-body">
                 <form method="post">
+                    <?php
+                    get_values();
+                    update_logpass($login, $pwd);
+                    ?>
                     <div class="input-group form-group">
                         <div class="row">
                             <h3 class="card-title font-weight-normal">Saisir votre login et un mot de passe</h3>
@@ -29,7 +34,7 @@ include 'pages/header.php';
                            
                             <div class="form-group">
                                 
-                                <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-user"></i> Se connecter</button><br><br>
+                                <button class="btn btn-primary" type="submit" name="connect"><i class="glyphicon glyphicon-user"></i> Se connecter</button><br><br>
                             </div>
                         </div>
                     </div>
