@@ -28,4 +28,25 @@ function connexionDB($connex){
             die ('err: '.$stocks->getMessage());
         }
 }
+
+// function admin(){
+
+//     if (isset ($_SESSION['admin'])){
+//         global $db;
+//         $a=[
+//             'email'=> $_SESSION['admin'],
+//             'role'=>'admin'
+//         ];
+//         $sql= "SELECT email, idrole FROM users WHERE email=:email AND idrole=:role";
+//         $req= $db->prepare($sql);
+//         $req ->execute($a);
+//         $exist= $req->rowCount($sql);
+//         return $exist;
+//     } else{
+//         return 0
+//     }
+//     //droit d'accès=1 
+//     //Pas de session
+//     //Pas d'accès=0
+// }
 ?>

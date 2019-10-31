@@ -5,6 +5,9 @@ $article = affichArticl();
 if ($article == false) {
     header('location: index.php?page=error');
 }
+if(admin()!=1){
+    header("location: index.php?page=dashboard");
+}
 ?>
 <?php
 if (isset($_POST["envoyer"])) {

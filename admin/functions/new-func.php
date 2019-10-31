@@ -29,7 +29,7 @@ function take_info()
             }else{
                 $_SESSION['admin2']=$email;
                 // var_dump($_SESSION['admin2']);
-                header("location: index.php?page=logandpass");
+                header('location: index.php?page=logandpass);
             }
 
     }

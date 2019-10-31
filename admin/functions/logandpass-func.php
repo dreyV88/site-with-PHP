@@ -36,30 +36,38 @@ function get_values(){
 function getIdSession()
 {
     global $db;
-    $req1 = $db->query("SELECT idusers FROM USERS WHERE email ='{$_SESSION['admin2']}'");
+    $req1 = $db->query("SELECT email FROM USERS WHERE email ='{$_SESSION['admin2']}'");
 
     $result = $req1->fetch(PDO::FETCH_OBJ);
     return $result;
 }
 function update_logpass($login, $pwd)
 {
-
     global $db;
     $user = getIdSession();
     $a = [
         'logd' => $login,
         'password' => sha1($pwd),
-        'user' => $user->idusers
+        'user' => $user->email
     ];
     
-    $sql = "UPDATE users SET login = :logd AND mdp=:password WHERE idusers=:user"; 
+    $sql = "UPDATE users SET login= :logd AND mdp=:password WHERE email=:user"; 
     // var_dump($sql);
     $req = $db->prepare($sql);
-    // var_dump($req);
-    $req->execute($a); // pour executer le tableau puisque les 2valeurs sont dedans
-    var_dump($req);
+     var_dump($req);
     var_dump($a);
+    $req->execute($a);
+   
     // $existe = $req->rowCount($sql);
     // // var_dump($existe);
     // return $existe;
+}
+function has_pwd(){
+    global $db;
+$sql = "SELECT  FROM users WHERE email = {$_SESSION['admin2']}' AND mdp=''";
+
+$req= $db-> prepare($sql);
+$req->execute();
+$exist= $req->rowCount($sql);
+return $exist;
 }
