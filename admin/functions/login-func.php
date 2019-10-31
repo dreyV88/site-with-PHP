@@ -1,4 +1,5 @@
 <?php
+global $is_admin;
 function is_admin($login, $pwd)
 {
 
@@ -15,6 +16,19 @@ function is_admin($login, $pwd)
     $req->execute($a); // pour executer le tableau puisque les 2valeurs sont dedans
     // var_dump($req);
     $existe = $req->rowCount($sql);
-    // var_dump($existe);
+   if($existe >0){
+       $_SESSION['admin']=$login;
+   }
     return $existe;
 }
+  
+if (isset($_SESSION['admin'])&& empty($_POST['submit'])){
+    header('location: index.php?page=dashboard');
+ }
+ if(!empty($_POST['submit'])){
+    $login = htmlspecialchars(trim($_POST['login']));
+    $pwd = htmlspecialchars(trim($_POST['mdp']));
+ $is_admin= is_admin($login, $pwd);
+ 
+ }
+ 

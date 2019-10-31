@@ -5,9 +5,9 @@ $article = affichArticl();
 if ($article == false) {
     header('location: index.php?page=error');
 }
-if(admin()!=1){
-    header("location: index.php?page=dashboard");
-}
+// if(admin()!=1){
+//     header("location: index.php?page=dashboard");
+// }
 ?>
 <?php
 if (isset($_POST["envoyer"])) {
@@ -59,7 +59,7 @@ if (isset($_POST["envoyer"])) {
 
             <div class="form-group col-sm-12">
                 <label for="content">contenu de l'article</label>
-                <textarea class="form-control" style="color:darkgray; height:auto;" name="contenu" id="content" rows="35"><?= $article->contenu ?></textarea>
+                <textarea id="mytextarea" class="form-control" style="color:darkgray; height:auto;" name="contenu" id="content" rows="35"><?= $article->contenu ?></textarea>
             </div>
             <div>
                 <h4>Publier?</h4>

@@ -19,8 +19,10 @@
   <link rel="stylesheet" href="../css/jquery.bxslider.css">
   <link rel="stylesheet" type="text/css" href="../css/isotope.css" media="screen" />
   <link rel="stylesheet" href="../css/animate.css">
-  <link href="../css/stylesheet.css" rel="stylesheet">
-
+  <link href="../css/stylesheet.css" rel="stylesheet"> 
+  <script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.19.1/langs/fr.min.js"
+</script>
   <title>Tableau de bord</title>
 </head>
 
