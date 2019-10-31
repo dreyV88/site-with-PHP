@@ -1,5 +1,6 @@
 <?php
 include 'pages/header.php';
+get_values();
 
 ?>
 <div class="container">
@@ -10,16 +11,13 @@ include 'pages/header.php';
             </div>
             <div class="card-body">
                 <form method="post">
-                    <?php
-                    get_values();
-                    update_logpass($login, $pwd);
-                    ?>
+                    
                     <div class="input-group form-group">
                         <div class="row">
                             <h3 class="card-title font-weight-normal">Saisir votre login et un mot de passe</h3>
                             
                             <div class="input-group form-group">
-                                <label for="login">login</label>
+                                <label for="login">Pseudo</label>
                                 <input type="text" name="login" id="login" class="form-control" required>
                             </div>
                             

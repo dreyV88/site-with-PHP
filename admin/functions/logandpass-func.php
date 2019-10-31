@@ -26,6 +26,9 @@ function get_values(){
                     </div>
                 </div>
 <?php
+            }else{
+                update_logpass($login, $pwd);
+                header('location: index.php?page=dashboard');
             }
 
     }
@@ -44,12 +47,12 @@ function update_logpass($login, $pwd)
     global $db;
     $user = getIdSession();
     $a = [
-        'login' => $login,
+        'logd' => $login,
         'password' => sha1($pwd),
         'user' => $user->idusers
     ];
     
-    $sql = "UPDATE users SET login=:login AND mdp=:password WHERE login=:user"; // les : font références au contenu du tableau 
+    $sql = "UPDATE users SET login = :logd AND mdp=:password WHERE idusers=:user"; 
     // var_dump($sql);
     $req = $db->prepare($sql);
     // var_dump($req);
