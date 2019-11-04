@@ -22,13 +22,14 @@ function is_admin($login, $pwd)
     return $existe;
 }
   
-if (isset($_SESSION['admin'])&& empty($_POST['submit'])){
-    header('location: index.php?page=dashboard');
- }
- if(!empty($_POST['submit'])){
+ if(isset($_POST['submit'])){
     $login = htmlspecialchars(trim($_POST['login']));
     $pwd = htmlspecialchars(trim($_POST['mdp']));
  $is_admin= is_admin($login, $pwd);
  
+ }
+ if (isset($_SESSION['admin'])){
+    header('location: index.php?page=dashboard');
+    exit;
  }
  

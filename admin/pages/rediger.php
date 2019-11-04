@@ -69,7 +69,7 @@ if (isset($_POST['post'])) {
                 </div>
                 <div class="form-group col-sm-12">
                     <label for="contenu">Contenu de l'article</label>
-                    <textarea id="mytextarea" class="form-control" name="contenu" id="contenu"></textarea>
+                    <textarea id="editor" class="form-control" name="contenu" id="contenu"></textarea>
 
                 </div>
 

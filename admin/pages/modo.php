@@ -3,7 +3,7 @@
 include 'pages/header.php';
 
 ?>
-<div class="container">
+<article class="container">
     <h2>Paramêtres</h2>
     <div class="row">
 
@@ -87,7 +87,7 @@ include 'pages/header.php';
         </div>
     </div>
 
-</div>
+</article>
 <?php
 include 'pages/footer.php';
 ?>

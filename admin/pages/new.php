@@ -1,17 +1,18 @@
 <?php
 include 'pages/header.php';
 ?>
-<div class="container">
+<article class="container">
     <div class="card col-lg-4 col-lg-offset-5 col-md-6 col-md-offset-3 col-sm-12 ">
         <div class="row">
             <div class="card-img-top">
                 <img src="../images/newpeople.png" style ="margin-left:22px" width="50%">
             </div>
             <div class="card-body">
-                <form method="post">
-                    <?php
-                    take_info();
-                    ?>
+                <form method="post" action="new.php">
+                     <?php
+                    // take_info();
+                    is_modo($email, $tokken)
+                    ?> 
                     <div class="input-group form-group">
                         <div class="row">
                             <h3 class="card-title font-weight-normal">Veuillez vous enregistrer</h3>
@@ -38,4 +39,7 @@ include 'pages/header.php';
 
         </div>
     </div>
-</div>
+</article>
+<?php
+include 'pages/footer.php';
+?>

@@ -1,5 +1,4 @@
-
-<?php 
+<?php
 
 include 'pages/header.php';
 ?>
@@ -32,20 +31,21 @@ include 'pages/header.php';
                                     ?>
                                     <div class="card bg-warning" style="height: 30px">
                                         <div class="card-body text-center text-white">
-                            
+
                                             <?php
                                                     foreach ($errors as $error) {
                                                         echo $error . "<br>";
                                                     }
-                            
+
                                                     ?>
-                            
+
                                         </div>
                                     </div>
-                            
+
                             <?php
                                     // après tous les test si le login et mdp sont dans la BDD je peux accéder au dashboard
                                 }
+                            }
                             ?>
                             <div class="input-group form-group">
                                 <label for="login">Pseudo</label>
@@ -60,7 +60,8 @@ include 'pages/header.php';
                                     <input type="checkbox" value="remember-me"> Se souvenir de moi
                                 </label>
                                 <button class="btn btn-primary" type="submit" name="submit"><i class="fa fa-user"> Connexion</i></button>
-                                <br><p style="text-align:center"> <a href="index.php?page=new">Nouveau modérateur?</a> </p>
+                                <br>
+                                <p style="text-align:center"> <a href="index.php?page=new">Nouveau modérateur?</a> </p>
 
                             </div>
                         </div>
