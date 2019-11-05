@@ -10,7 +10,39 @@ has_pwd();
                 <img src="../images/newpeople.png" style ="margin-left:22px" width="50%">
             </div>
             <div class="card-body">
-                <form method="post" action="functions/logandpass-func.php">
+                <form method="post" >
+                <?php
+
+// function get_values(){
+    if (isset($_POST['connect'])) {
+        $login = htmlspecialchars(trim($_POST['login']));
+        $pwd = htmlspecialchars(trim($_POST['mdp']));
+        $pwd2 = htmlspecialchars(trim($_POST['mdp_again']));
+
+        $errors = [];
+
+        if (empty($login) || empty($pwd)|| (empty($pwd2))) {
+            $errors['empty'] = "tous les champs n'ont pas été rempli";
+        }
+        else if($pwd !=$pwd2){
+            $errors['nomatch']="les mots de passe ne correspondent pas";
+        }
+        if (!empty($errors)) { 
+            ?>
+                <div class="card bg-warning" style="height: 30px">
+                    <div class="card-body text-center text-white">
+                        <?php
+                            foreach ($errors as $error) {
+                            echo $error . "<br>";
+                            }
+                        
+                        ?>
+                    </div>
+                </div>
+                <?php
+            }
+        }
+?>
                     
                     <div class="input-group form-group">
                         <div class="row">

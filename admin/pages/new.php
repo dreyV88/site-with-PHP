@@ -8,10 +8,33 @@ include 'pages/header.php';
                 <img src="../images/newpeople.png" style ="margin-left:22px" width="50%">
             </div>
             <div class="card-body">
-                <form method="post" action="functions/new-func.php">
+                <form method="post" >
                      <?php
-                    //  take_info();
+                    if (isset($_POST['submit'])) {
+                        $email = htmlspecialchars(trim($_POST['email']));
+                        $tokken = htmlspecialchars(trim($_POST['tokken']));
                     
+                        $errors = [];
+                    
+                        if (empty($email) || empty($tokken)) {
+                            $errors['empty'] = "tous les champs n'ont pas été rempli";
+                        } else if (is_modo($email, $tokken) == 0) {
+                            $errors['exist'] = "Ce modérateur n'existe pas";
+                        }
+                        if (!empty($errors)) {
+                            ?>
+                            <div class="card bg-warning" style="height: 30px">
+                                <div class="card-body text-center text-white">
+                                    <?php
+                                            foreach ($errors as $error) {
+                                                echo $error . "<br>";
+                                            }
+                                            ?>
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    }
                     ?> 
                     <div class="input-group form-group">
                         <div class="row">

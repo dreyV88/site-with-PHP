@@ -9,6 +9,7 @@
 // }catch(PDOException $storage){
 //     die ('une erreur est survenue lors de la connexion de la base de données: '.$storage->getMessage());
 // }
+global $db;
 
 session_start();
 $param= [
@@ -28,7 +29,7 @@ function connexionDB($connex){
             die ('err: '.$stocks->getMessage());
         }
 }
-
+$db = connexionDB($param);
 // function admin(){
 
 //     if (isset ($_SESSION['admin'])){

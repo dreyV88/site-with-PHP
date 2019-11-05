@@ -2,7 +2,7 @@
 error_reporting(E_ERROR);
 
 include '../functions/main-func.php';
-$db = connexionDB($param);
+
 
 $pages = scandir('pages/'); //scandir scan le contenu d'un dossier
 if (isset($_GET['page']) && !empty($_GET['page'])) { // si on saisit directement et si la variable n'est pas vide dans ce cas je peux voir si elle se trouve dans le dossier
