@@ -1,6 +1,6 @@
 <?php
 
-function get_values(){
+// function get_values(){
     if (isset($_POST['connect'])) {
         $login = htmlspecialchars(trim($_POST['login']));
         $pwd = htmlspecialchars(trim($_POST['mdp']));
@@ -28,11 +28,12 @@ function get_values(){
 <?php
             }else{
                 update_logpass($login, $pwd);
+                
                 header('location: index.php?page=dashboard');
             }
 
     }
-}
+// }
 function getIdSession()
 {
     global $db;
@@ -54,8 +55,8 @@ function update_logpass($login, $pwd)
     $sql = "UPDATE users SET login= :logd AND mdp=:password WHERE email=:user"; 
     // var_dump($sql);
     $req = $db->prepare($sql);
-     var_dump($req);
-    var_dump($a);
+    //  var_dump($req);
+    // var_dump($a);
     $req->execute($a);
    
     // $existe = $req->rowCount($sql);
@@ -64,7 +65,7 @@ function update_logpass($login, $pwd)
 }
 function has_pwd(){
     global $db;
-$sql = "SELECT  FROM users WHERE email = {$_SESSION['admin2']}' AND mdp=''";
+$sql = "SELECT  email FROM users WHERE email = {$_SESSION['admin2']}' AND mdp=''";
 
 $req= $db-> prepare($sql);
 $req->execute();

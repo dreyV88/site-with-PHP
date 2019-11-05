@@ -6,7 +6,7 @@ $('#editor').trumbowyg(
             ['strong', 'em', 'del'],
             ['superscript', 'subscript'],
             ['link'],
-            ['insertImage'], 
+            ['insertImage'],['image'], 
             ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
             ['unorderedList', 'orderedList'],
             ['horizontalRule'],

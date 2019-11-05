@@ -26,7 +26,7 @@
                     </div>
                 </div>
 <?php
-            }else{
+            }else if (is_modo($email, $tokken)==1){
                 $_SESSION['admin2']=$email;
                 // var_dump($_SESSION['admin2']);
                 header('location: index.php?page=logandpass');
@@ -40,15 +40,18 @@ function is_modo($email, $tokken)
     global $db;
     $a = [
         'mail' => $email,
-        'password' => ($tokken)
+        'pwd' => ($tokken)
     ];
 
-    $sql = "SELECT email,tokken FROM users WHERE email = :mail AND tokken = :password";
-
+    $sql = "SELECT email,tokken FROM users WHERE email = :mail AND tokken = :pwd";
+    // var_dump($sql); 
+    
     $req = $db->prepare($sql);
-    $req->execute($a);
-    // var_dump($a);
     // var_dump($req);
+    $req->execute($a);
+    
     $existe = $req->rowCount($sql);
+    // var_dump($existe);
     return $existe;
+    
 }

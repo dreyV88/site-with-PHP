@@ -74,11 +74,11 @@
 <script src="../js/jquery.prettyPhoto.js"></script>
 <script src="../js/jquery.isotope.min.js"></script>
 <script src="../js/functions.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-<script src="../js/trumbowyg.min.js"></script>
+<script src="../js/trumbowyg.min.js"></script> -->
 <!-- <link rel="stylesheet" href="js/trumbowyg-master/dist/ui/trumbowyg.min.css"> -->
-<script src="js/trumbowygmyself.js"></script>
+<!-- <script src="js/trumbowygmyself.js"></script> -->
 <script>
   wow = new WOW({}).init();
 </script>

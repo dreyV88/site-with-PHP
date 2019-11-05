@@ -1,6 +1,6 @@
 <?php
 include 'pages/header.php';
-get_values();
+has_pwd();
 
 ?>
 <div class="container">
@@ -10,7 +10,7 @@ get_values();
                 <img src="../images/newpeople.png" style ="margin-left:22px" width="50%">
             </div>
             <div class="card-body">
-                <form method="post">
+                <form method="post" action="functions/logandpass-func.php">
                     
                     <div class="input-group form-group">
                         <div class="row">

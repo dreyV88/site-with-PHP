@@ -20,10 +20,11 @@
   <link rel="stylesheet" type="text/css" href="../css/isotope.css" media="screen" />
   <link rel="stylesheet" href="../css/animate.css">
   <link href="../css/stylesheet.css" rel="stylesheet"> 
-  <link rel="stylesheet" href="../css/trumbowyg.min.css">
-  <script>
+  <!-- <link rel="stylesheet" href="../css/trumbowyg.min.css"> -->
+  <!-- <script>
     src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.19.1/langs/fr.min.js"
-</script>
+</script> -->
+
   <title>Tableau de bord</title>
 </head>
 

@@ -8,10 +8,10 @@ include 'pages/header.php';
                 <img src="../images/newpeople.png" style ="margin-left:22px" width="50%">
             </div>
             <div class="card-body">
-                <form method="post" action="new.php">
+                <form method="post" action="functions/new-func.php">
                      <?php
-                    // take_info();
-                    is_modo($email, $tokken)
+                    //  take_info();
+                    
                     ?> 
                     <div class="input-group form-group">
                         <div class="row">
