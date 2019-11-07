@@ -2,6 +2,7 @@
 include 'pages/header.php';
 
 ?>
+<div class="container">
 <article>
     <div class="col-md-3" style="border-right: 2px solid #098137;">
         <ul class="nav nav-pills nav-stacked" id="myTab" role="tablist">
@@ -26,7 +27,8 @@ include 'pages/header.php';
         </div>
     </div>
 </article>
+</div>
 <?php
-// include 'pages/footer.php';
+include 'pages/footer.php';
 
 ?>
