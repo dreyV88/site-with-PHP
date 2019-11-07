@@ -683,3 +683,15 @@ input:checked + .slider:before {
   border-radius: .25rem !important;
   padding: .375rem 1.75rem .375rem .75rem !important;
 }
+.navbarmobile>ul{
+  margin-top: -2.8rem!important;
+  margin-left: 10.1rem!important;
+  width: 500px!important;
+  display: flex!important;
+  flex-flow: row wrap!important;
+  flex-wrap: wrap!important;
+  justify-content: space-around!important;
+}
+.menu>ul{
+  margin-top: -24px !important;
+}

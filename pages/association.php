@@ -3,7 +3,7 @@ include 'pages/header.php';
 ?>
 <div class="container">
 <div class="row">
-    <div class="col-lg-2" style="border-right: 2px solid #098137;">
+    <div class="col-lg-2" >
         <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
             <ul class="nav flex-column" id="v-pills-tab">
                 <li class="nav-item">
@@ -24,7 +24,7 @@ include 'pages/header.php';
 
 
     </div>
-    <div class="col-lg-10">
+    <div class="col-lg-10" style="border-left: 4px solid #098137;">
         <div class="tab-content rubric-asso" id="vertical-tabContent">
             <div class="tab-pane fade in show active" id="asso" role="tabpanel" aria-labelledby="v-pills-asso-tab">
                 <h2>La Création</h2>

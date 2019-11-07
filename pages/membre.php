@@ -4,7 +4,7 @@ include 'pages/header.php';
 ?>
 <div class="container">
 <article>
-    <div class="col-md-3" style="border-right: 2px solid #098137;">
+    <div class="col-md-3" >
         <ul class="nav nav-pills nav-stacked" id="myTab" role="tablist">
             <li class="nav-item"><a class="nav-link active" id="home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">Mon profile</a></li>
             <li class="nav-item"><a  class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Mes commentaires</a></li>
@@ -13,7 +13,7 @@ include 'pages/header.php';
         </ul>
     </div>
     
-    <div class="col-md-9 tab-content" id="myTabContent">
+    <div class="col-md-9 tab-content" id="myTabContent" style="border-left: 4px solid #098137;">
         <div class="tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <H2>voila</H2>
             <p>...</p>

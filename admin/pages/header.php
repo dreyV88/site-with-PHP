@@ -43,7 +43,7 @@
 
             <div class="navbar-brand">
               <a href="index.php?page=dashboard">
-                <h1><span>Tableau</span> de bord </h1>
+                <h1><span>Tableau </span>de bord </h1>
               </a>
             </div>
           </div>
