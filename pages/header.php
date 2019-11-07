@@ -52,6 +52,8 @@
                   <!-- <div role="presentation"><a href="services.html">Nos Objectifs</a></div></li> -->
                 <li role="presentation"><a href="index.php?page=actus" class="<?php if($page =='actus'){echo 'active';}?>">Actualités</a></li>
                 <li role="presentation"><a href="index.php?page=galerie" class="<?php if($page =='galerie'){echo 'active';}?>">Galeries d'images</a></li>
+                <li role="presentation"><a href="index.php?page=membre" class="<?php if($page =='membre'){echo 'active';}?>">Espace Membres</a></li>
+
                 <li role="presentation"><a href="index.php?page=contact" class="<?php if($page =='contact'){echo 'active';}?>">Contact</a></li>
               </ul>
             </div>

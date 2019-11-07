@@ -3,7 +3,7 @@ include 'pages/header.php';
 ?>
 <div class="container">
 <div class="row">
-    <div class="col-lg-2">
+    <div class="col-lg-2" style="border-right: 2px solid #098137;">
         <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
             <ul class="nav flex-column" id="v-pills-tab">
                 <li class="nav-item">
@@ -26,7 +26,7 @@ include 'pages/header.php';
     </div>
     <div class="col-lg-10">
         <div class="tab-content rubric-asso" id="vertical-tabContent">
-            <div class="tab-pane fade show active" id="asso" role="tabpanel" aria-labelledby="v-pills-asso-tab">
+            <div class="tab-pane fade in show active" id="asso" role="tabpanel" aria-labelledby="v-pills-asso-tab">
                 <h2>La Création</h2>
                 <p>L'association les amis du clocher existe depuis le 15 octobre 2011.
                     Elle a vu le jour dans le cadre de la volonté de restaurer le patrimoine communal dont l'église Saint Géry est la pièce maîtresse
@@ -85,7 +85,7 @@ include 'pages/header.php';
                 </ul>
 
             </div>
-            <div class="tab-pane fade" id="patrimoine" role="tabpanel" aria-labelledby="v-pills-patrimoine-tab">
+            <div class="tab-pane fade in" id="patrimoine" role="tabpanel" aria-labelledby="v-pills-patrimoine-tab">
                 <ul style="list-style-type: none">
                     <li>Chapelle rue de Cambrai </li>
                     <li>Chapelle du Calvaire </li>
