@@ -37,7 +37,7 @@
   </div>
   </div> -->
 
-  
+
   <div class="sub-footer">
     <div class="container">
       <div class="row">
@@ -62,7 +62,7 @@
 
       </div>
     </div>
-    </div>
+  </div>
 </footer>
 <script src="../js/jquery-2.1.1.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -74,11 +74,17 @@
 <script src="../js/jquery.prettyPhoto.js"></script>
 <script src="../js/jquery.isotope.min.js"></script>
 <script src="../js/functions.js"></script>
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-<script src="../js/trumbowyg.min.js"></script> -->
-<!-- <link rel="stylesheet" href="js/trumbowyg-master/dist/ui/trumbowyg.min.css"> -->
-<!-- <script src="js/trumbowygmyself.js"></script> -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+<script src="../summernote-master/lang/summernote-fr-FR.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#editor').summernote({
+      lang: 'fr-FR';
+    });
+    
+  });
+  
+</script>
 <script>
   wow = new WOW({}).init();
 </script>

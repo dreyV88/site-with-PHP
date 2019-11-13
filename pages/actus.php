@@ -103,7 +103,7 @@ include 'pages/header.php';
           <!--/.categories-->
 
           <div class="widget archieve">
-            <h3>Archieve</h3>
+            <h3>Archives</h3>
             <div class="row">
               <div class="col-sm-12">
                 <ul class="blog_archieve">
@@ -118,7 +118,7 @@ include 'pages/header.php';
           <!--/.archieve-->
 
           <div class="widget tags">
-            <h3>Tag Cloud</h3>
+            <h3>les mots clés</h3>
             <ul class="tag-cloud">
               <li><a class="btn btn-xs btn-primary" href="#">Apple</a></li>
               <li><a class="btn btn-xs btn-primary" href="#">Barcelona</a></li>
@@ -135,7 +135,7 @@ include 'pages/header.php';
           <!--/.tags-->
 
           <div class="widget blog_gallery">
-            <h3>Our Gallery</h3>
+            <h3>Nos images</h3>
             <ul class="sidebar-gallery">
               <li><a href="#"><img src="images/blog/gallery1.png" alt="" /></a></li>
               <li><a href="#"><img src="images/blog/gallery2.png" alt="" /></a></li>
