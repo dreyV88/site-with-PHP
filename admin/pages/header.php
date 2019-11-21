@@ -1,10 +1,10 @@
 <?php
-// if ($page !='new'&& $page != 'login' && !isset($_SESSION['admin'])) {
+// if (!$_GET['new'] && !$_GET['login'] && !isset($_SESSION['admin'])) {
 //     header('location: index.php?page=login');
 //   }
 
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -26,7 +26,7 @@
   <title>Tableau de bord</title>
 </head>
 
-<body>
+<body> -->
   <header>
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="navigation">

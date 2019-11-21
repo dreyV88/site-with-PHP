@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+// include 'header.php';
 
 ?>
 <!-- teste le contenu -->
@@ -69,7 +69,7 @@ if (isset($_POST['post'])) {
                 </div>
                 <div class="form-group col-sm-12">
                     <label for="contenu">Contenu de l'article</label>
-                    <textarea id="editor" class="form-control" name="contenu" id="contenu"></textarea>
+                    <textarea id= "editor" class="form-control" name="contenu" id="contenu"></textarea>
 
                 </div>
 
@@ -97,8 +97,12 @@ if (isset($_POST['post'])) {
         </form>
     </div>
 </div>
-
+<!-- <script>
+    $(document).ready(function() {
+        $('#editor').summernote();
+    });
+  </script> -->
 <?php
 
-include 'pages/footer.php';
+// include 'pages/footer.php';
 ?>

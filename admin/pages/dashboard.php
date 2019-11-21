@@ -1,5 +1,5 @@
 <?php
-include 'pages/header.php';
+// include 'pages/header.php';
 ?>
 <article>
     <h2>Tableau de bord</h2>
@@ -81,7 +81,7 @@ include 'pages/header.php';
                                         <div class="modal-body">
                                             <p>Commentaire posté par <strong><?= $comment->login . " (" . $comment->email . ")</strong><br>Le:" . date("d/m/Y à H:i", strtotime($comment->date)) ?></p>
                                             <hr>
-                                            <p><?= nl2br($comment->contenu) ?></p>
+                                            <div><?= nl2br($comment->contenu) ?></div>
                                         </div>
                                         <div class="modal-footer">
                                             <a href="#" id="<?= $comment->idcom ?>" class=" btn btn-default btn-circle see_comment"><i class="fa fa-check"></i></a>
@@ -120,5 +120,5 @@ toto
 </article>
 
 <?php
-include 'pages/footer.php';
+
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-include 'pages/header.php';
+// include 'pages/header.php';
 // if(admin()!=1){
 //     header("location: index.php?page=dashboard");
 // }

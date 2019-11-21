@@ -1,6 +1,6 @@
 <?php
 
-include 'pages/header.php';
+// include 'pages/header.php';
 
 ?>
 <article class="container">
@@ -89,5 +89,5 @@ include 'pages/header.php';
 
 </article>
 <?php
-include 'pages/footer.php';
+// include 'pages/footer.php';
 ?>

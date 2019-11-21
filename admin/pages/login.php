@@ -1,6 +1,6 @@
 <?php
+// include 'pages/header.php'
 
-include 'pages/header.php';
 ?>
 <div class="container">
     <div class="card col-lg-4 col-lg-offset-5 col-md-6 col-md-offset-3 col-sm-12 ">
@@ -73,5 +73,5 @@ include 'pages/header.php';
     </div>
 </div>
 <?php
-include 'pages/footer.php';
+// include 'pages/footer.php';
 ?>

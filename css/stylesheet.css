@@ -91,7 +91,7 @@ a:hover {
 	float: left;	
 	font-size: 28px;	
 	color:#333;	
-	width: 58%;	
+	/* width: 78%;	 */
 }
 .navbar-brand h1 span {
 	color: rgb(9, 129, 55);

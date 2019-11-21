@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+// include "header.php";
 
 $article = affichArticl();
 if ($article == false) {
@@ -59,7 +59,7 @@ if (isset($_POST["envoyer"])) {
 
             <div class="form-group col-sm-12">
                 <label for="content">contenu de l'article</label>
-                <textarea id="editor" class="form-control" style="color:darkgray; height:auto;" name="contenu" id="content" rows="35"><?= $article->contenu ?></textarea>
+                <textarea id= "editor" class="form-control" style="color:darkgray; height:auto;" name="contenu" id="content" rows="35"><?= $article->contenu ?></textarea>
             </div>
             <div>
                 <h4>Publier?</h4>
@@ -80,8 +80,12 @@ if (isset($_POST["envoyer"])) {
 
     </form>
 </div>
-
+<script>
+    $(document).ready(function() {
+        $('#editor').summernote();
+    });
+  </script>
 
 <?php
-include 'pages/footer.php';
+// include 'pages/footer.php';
 ?>
