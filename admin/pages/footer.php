@@ -76,15 +76,7 @@
 <script src="../js/functions.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
 <script src="../summernote-master/lang/summernote-fr-FR.js"></script>
-<script>
-  $(document).ready(function() {
-    $('#editor').summernote({
-      lang: 'fr-FR';
-    });
-    
-  });
-  
-</script>
+
 <script>
   wow = new WOW({}).init();
 </script>

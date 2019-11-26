@@ -46,7 +46,7 @@ if (in_array($page . '-func.php', $pages_functions)) {
 
 <body>
   <?php
-  if ($page !='new' && $page != 'login'  && !isset($_SESSION['admin'])) {
+  if ($page !='new' && $page != 'login'  && !isset($_SESSION['admin'])&& !isset($_SESSION['admin2'])) {
       header('location: index.php?page=login');
      }
     //else if (isset($_SESSION['admin'])){

@@ -1,8 +1,3 @@
-<?php
-// include 'pages/header.php';
-has_pwd();
-
-?>
 <div class="container">
     <div class="card col-lg-4 col-lg-offset-5 col-md-6 col-md-offset-3 col-sm-12 ">
         <div class="row">
@@ -19,14 +14,15 @@ has_pwd();
         $pwd = htmlspecialchars(trim($_POST['mdp']));
         $pwd2 = htmlspecialchars(trim($_POST['mdp_again']));
 
-        $errors = [];
+        // $errors = [];
 
-        if (empty($login) || empty($pwd)|| (empty($pwd2))) {
-            $errors['empty'] = "tous les champs n'ont pas été rempli";
-        }
-        else if($pwd !=$pwd2){
-            $errors['nomatch']="les mots de passe ne correspondent pas";
-        }
+        // if (empty($login) || empty($pwd)|| (empty($pwd2))) {
+        //     $errors['empty'] = "tous les champs n'ont pas été rempli";
+        // }
+        // else if($pwd !=$pwd2){
+        //     $errors['nomatch']="les mots de passe ne correspondent pas";
+        // }
+        // var_dump($errors);
         if (!empty($errors)) { 
             ?>
                 <div class="card bg-warning" style="height: 30px">
@@ -41,7 +37,11 @@ has_pwd();
                 </div>
                 <?php
             }
-        }
+        } 
+        // else{
+        //     update_logpass($login, $pwd);
+        //     has_pwd();
+        // }
 ?>
                     
                     <div class="input-group form-group">
