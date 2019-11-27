@@ -111,12 +111,12 @@
         </tbody>
 
     </table>
-    <pre>
+    <!-- <pre>
 <?php
 var_dump($_SESSION);
 ?>
 toto
-</pre>
+</pre> -->
 </article>
 
 <?php

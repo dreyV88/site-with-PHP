@@ -23,15 +23,15 @@ include 'pages/header.php';
               <div class="col-sm-2 text-center">
                 <div class="entry-meta">
                   <span id="publish_date"><?= date("j/M")?></span>
-                  <span><i class="fa fa-user"></i> <a href="#"><?= $article->idusers?></a></span>
-                  <span><i class="fa fa-comment"></i> <a href="#">2 Comments</a></span>
+                  <span><i class="fa fa-user"></i> <a href="#"><?= $article->nom_prenom?></a></span>
+                  <span><i class="fa fa-comment"></i> <a href="#">Commentaires</a></span>
                   <span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>
                 </div>
               </div>
               <div class="col-sm-10 blog-content">
                 <a href=""><img class="img-responsive img-blog" src="./images/img_blog/<?= $article->image?>" width="60%" alt="<?= $article->titre?>" /></a>
                 <h4><?= $article->titre?></h4>
-                <p style="text-align: justify;"><?= substr(nl2br($article->contenu),0,300)."..."?></p>
+                <p style="text-align: justify;"><?= substr(html_entity_decode($article->contenu),0,300)."..."?></p>
                 <a class="btn btn-primary readmore" href="index.php?page=article&id=<?=$article->idarticle?>">Lire la suite <i class="fa fa-angle-right"></i></a>
               </div>
             </div>

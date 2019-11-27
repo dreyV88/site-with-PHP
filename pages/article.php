@@ -14,7 +14,7 @@ if ($article == false) {
     <div class="container bg-white">
         <h2><?= $article->titre ?></h2>
         <h6>Par <?= $article->nom_prenom ?> le <?= date("d/m/Y à H:i", strtotime($article->dateparution)) ?></h6>
-        <p><?= nl2br($article->contenu) ?></p>
+        <p><?= html_entity_decode($article->contenu) ?></p>
     <?php
     }
     ?>
@@ -68,8 +68,12 @@ if ($article == false) {
             } else {
                 commentaire($login, $email, $contenu);
                 ?>
+            
             <script>
-                window.location.replace("index.php?page=article&id=<?= $_GET['id'] ?>");
+            alert("votre commentaire sera visible après modération.");
+            </script>
+            <script>
+                window.location.replace("index.php?page=article&id=<?= $_GET['id'] ?>");                
             </script>
     <?php
         }

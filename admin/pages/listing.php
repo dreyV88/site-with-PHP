@@ -46,6 +46,6 @@
 </section>
 
 <?php
-include 'pages/footer.php';
+// include 'pages/footer.php';
 
 ?>

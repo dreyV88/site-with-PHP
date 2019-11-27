@@ -3,7 +3,7 @@
 function get_article()
 {
     global $db;
-
+    $getID=$_GET['id'];
     $req = $db->query("SELECT articles.idarticle, 
     articles.titre, 
     articles.image,
@@ -13,7 +13,7 @@ function get_article()
     FROM articles
     JOIN users
     ON articles.idusers = users.idusers
-    WHERE articles.idarticle='{$_GET['id']}'
+    WHERE articles.idarticle='$getID'
     AND articles.publier='1'
     ");
 
@@ -24,12 +24,12 @@ function get_article()
 function commentaire($login, $email, $contenu)
 {
     global $db;
-
+    $getID=$_GET['id'];
     $comment = array(
         'logs' => $login,
         'email' => $email,
         'com'   => $contenu,
-        'postId' => $_GET["id"]
+        'postId' => $getID
     );
 
     $sql = "INSERT INTO commentaire (login, email, contenu, idarticle, date) VALUES(:logs, :email, :com, :postId, NOW())";
@@ -41,8 +41,8 @@ function commentaire($login, $email, $contenu)
 function get_comments()
 {
     global $db;
-
-    $req = $db->query("SELECT * FROM commentaire WHERE idarticle ='{$_GET['id']}' ORDER BY date DESC");
+    $getID=$_GET['id'];
+    $req = $db->query("SELECT * FROM commentaire WHERE idarticle =$getID AND modere = 1 ORDER BY date DESC");
     $results = [];
 
     while ($rows = $req->fetchObject()) {

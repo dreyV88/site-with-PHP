@@ -49,11 +49,11 @@
           </div>
           <div class="col-md-6">
             <ul class="pull-right">
-              <li><a href="#">Accueil</a></li>
-              <li><a href="#">L'association</a></li>
-              <li><a href="#">Actualités</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="index.php?page=home">Accueil</a></li>
+              <li><a href="index.php?page=association">L'association</a></li>
+              <li><a href="index.php?page=actus">Actualités</a></li>
+              <!-- <li><a href="#">Portfolio</a></li> -->
+              <li><a href="index.php?page=contact">Contact</a></li>
             </ul>
           </div>
           <div class="pull-right">
