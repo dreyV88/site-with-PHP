@@ -68,23 +68,23 @@ if ($article == false) {
             } else {
                 commentaire($login, $email, $contenu);
                 ?>
-            
+
             <script>
-            alert("votre commentaire sera visible après modération.");
+                alert("votre commentaire sera visible après modération.");
             </script>
             <script>
-                window.location.replace("index.php?page=article&id=<?= $_GET['id'] ?>");                
+                window.location.replace("index.php?page=article&id=<?= $_GET['id'] ?>");
             </script>
     <?php
         }
     }
     ?>
 
-    <form method="post">
+    <form method="post" name="formula">
         <div class="row">
             <div class="col-sm-6 blog-content">
                 <label for="nom">Login</label>
-                <input type="texte" name="login" id="nom" class="form-control is-invalid" style="width:38rem" />
+                <input type="text" name="login" id="nom" class="form-control is-invalid" style="width:38rem" />
 
             </div>
             <div class="col-sm-6 blog-content">
@@ -95,8 +95,14 @@ if ($article == false) {
             <div class="col-sm-12 blog-content">
                 <label for="content">Commentaire</label>
                 <textarea name="contenu" id="content" class="form-control"></textarea>
+            </div >
+
+            <div class="col-sm-12 blog-content">
+                <label id='captcha' for="reponse"></label>
+                <input type="texte" id="reponse">
             </div>
             <button type="submit" name="submit" class="btn btn-primary">commenter le post</button>
+
         </div>
     </form>
     </div>

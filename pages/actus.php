@@ -22,9 +22,9 @@ include 'pages/header.php';
             <div class="row">
               <div class="col-sm-2 text-center">
                 <div class="entry-meta">
-                  <span id="publish_date"><?= date("j/M")?></span>
+                  <span id="publish_date"><?= date("j/M",strtotime($article->dateparution))?></span>
                   <span><i class="fa fa-user"></i> <a href="#"><?= $article->nom_prenom?></a></span>
-                  <span><i class="fa fa-comment"></i> <a href="#">Commentaires</a></span>
+                  <span><i class="fa fa-comment"></i> <a href="#"><?= $article->modere?> <br>Commentaires</a></span>
                   <span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>
                 </div>
               </div>

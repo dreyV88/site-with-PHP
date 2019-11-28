@@ -7,14 +7,16 @@ function affiche(){
     articles.image,
     articles.contenu, 
     articles.dateparution,
-    users.nom_prenom
-    -- commentaire.modere 
-    FROM articles
-    JOIN users
+    users.nom_prenom,
+    COUNT(commentaire.modere) as modere,
+    commentaire.contenu as coms
+    FROM `articles` 
+    LEFT JOIN commentaire 
+    ON articles.idarticle= commentaire.idarticle
+    LEFT JOIN users
     ON articles.idusers = users.idusers 
-    -- INNER JOIN commentaire
-    -- ON articles.idarticle = commentaire.idarticle
-    WHERE articles.publier='1' ORDER BY articles.dateparution DESC ");
+    WHERE articles.publier =1
+    GROUP by articles.idarticle ");
     $resultat= [];
     while($row = $req->fetchObject()){
         $resultat[]= $row;
