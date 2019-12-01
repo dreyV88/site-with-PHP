@@ -95,15 +95,31 @@ if ($article == false) {
             <div class="col-sm-12 blog-content">
                 <label for="content">Commentaire</label>
                 <textarea name="contenu" id="content" class="form-control"></textarea>
-            </div >
+            </div>
 
-            <div class="col-sm-12 blog-content">
+            <!-- <div class="col-sm-12 blog-content">
                 <label id='captcha' for="reponse"></label>
                 <input type="texte" id="reponse">
-            </div>
-            <button type="submit" name="submit" class="btn btn-primary">commenter le post</button>
+            </div> -->
+            <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+            <br />
+            <div class="col-sm-12 blog-content text-right">
+                <button type="submit" name="submit" class="btn btn-primary">commenter le post</button>
 
+            </div>
         </div>
+
+    </form>
+    <script type="text/javascript">
+  var onloadCallback = function() {
+    alert("grecaptcha is ready!");
+  };
+</script>
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+    </script>
+
+    </div>
     </form>
     </div>
     <?php
