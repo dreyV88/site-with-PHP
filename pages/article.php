@@ -97,30 +97,28 @@ if ($article == false) {
                 <textarea name="contenu" id="content" class="form-control"></textarea>
             </div>
 
-            <!-- <div class="col-sm-12 blog-content">
-                <label id='captcha' for="reponse"></label>
-                <input type="texte" id="reponse">
-            </div> -->
-            <div class="g-recaptcha" data-sitekey="your_site_key"></div>
-            <br />
-            <div class="col-sm-12 blog-content text-right">
+            <div class="col-sm-6 blog-content "> <br>
+                <label id="captcha" for="reponse"></label>
+                <input type="text" id="reponse" class= "form-control text-center">
+                <div id="message">Vérifiez votre réponse.</div>
+                <div id="success">Bonne réoponse :)</div>
+                <div id="fail">Retentez votre chance :(</div>
+                <button type="reset" value="reset" class="btn btn-primary">Reset</button>
                 <button type="submit" name="submit" class="btn btn-primary">commenter le post</button>
+            </div>
+
+            <div class="col-sm-12 blog-content text-right">
+                
+                
 
             </div>
         </div>
 
     </form>
-    <script type="text/javascript">
-  var onloadCallback = function() {
-    alert("grecaptcha is ready!");
-  };
-</script>
 
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
-    </script>
 
     </div>
-    </form>
+    
     </div>
     <?php
     include 'pages/footer.php';

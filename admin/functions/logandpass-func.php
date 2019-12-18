@@ -5,8 +5,8 @@ function getIdSession()
 {
     global $db;
     $mySession= $_SESSION['admin2'];
-    $req1 = $db->query("SELECT email FROM USERS WHERE email =$mySession");
-    // var_dump($req1);
+    $req1 = $db->query("SELECT email FROM USERS WHERE email = '$mySession'");
+    var_dump($req1);
     $result = $req1->fetch(PDO::FETCH_OBJ);
     return $result;
 }
@@ -23,7 +23,7 @@ function update_logpass($login, $pwd)
 
     $sql = "UPDATE users SET login= :logd, mdp=:password WHERE email=:user";
     // var_dump($sql);
-    $sql2= "SELECT login FROM USERS WHERE email =$mySession";
+    $sql2= "SELECT login FROM USERS WHERE email ='$mySession'";
     $req = $db->prepare($sql);
     // var_dump($req);
     // var_dump($a);

@@ -1,26 +1,36 @@
 $(document).ready(function(){
 $(".parallax").parallax();
+
 });
  
-//  type="text/javascript">
-//   var onloadCallback = function() {
-//     alert("grecaptcha is ready!");
-//   };
+var total;
 
+function getRandom(){return Math.ceil(Math.random()* 20);}
+function createSum(){
+		var randomNum1 = getRandom(),
+			randomNum2 = getRandom();
+	total =randomNum1 + randomNum2;
+  $( "#captcha" ).text( randomNum1 + " + " + randomNum2 + "=" );  
+  $("#reponse").val('');
+  checkInput();
+}
 
- 
-    // var result;
-    // var maximum =20;
-    
-    //  option1=Math.ceil(Math.random()* maximum);
-    //  option2=Math.ceil(Math.random()* maximum);
-    // result= option1+option2;
-    // document.getElementById('captcha').innerHTML =  option1 + " + " + option2 + " =";
-    // document.formula.onsubmit = function() {
-    //     var sum = document.getElementById('reponse').value;
-    //     if(Number.parseInt(sum) != option1 + option2) {
-    //     alert("Désolé, votre calcul est incorrect, cela laisse penser que vous êtes un robot.");
-    //     return false;
-    //     }
-    //    };
+function checkInput(){
+		var input = $("#reponse").val(), 
+    	// slideSpeed = 200,
+      hasInput = !!input, 
+      valid = hasInput && input == total;
+    $('#message').toggle(!hasInput);
+    $('button[type=submit]').prop('disabled', !valid);  
+    $('#success').toggle(valid);
+    $('#fail').toggle(hasInput && !valid);
+}
 
+// $(document).ready(function(){
+	//create initial sum
+	createSum();
+	// On "reset button" click, generate new random sum
+	$('button[type=reset]').click(createSum);
+	// On user input, check value
+	$( "#reponse" ).keyup(checkInput);
+// });

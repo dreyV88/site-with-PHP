@@ -144,7 +144,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`idusers`, `nom_prenom`, `email`, `login`, `mdp`, `tokken`, `role`, `cotisation`, `mode_de_paiement`, `idrole`) VALUES
-(1, 'audrey vincent', 'black_pearl_from971@hotmail.com', 'adminDrey', 'ea086049a30f9eeedab9ad1be8ac44dc10c32309', '', 1, NULL, NULL, 1);
+(1, 'audrey V', 'black@hotmail.com', 'adminDrey', 'ea086049a30f9eeedab9ad1be8ac44dc10c32309', '', 1, NULL, NULL, 1);
 
 --
 -- Index pour les tables exportées
