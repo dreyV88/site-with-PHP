@@ -39,6 +39,11 @@ include 'pages/header.php';
             <?php
         }
         ?>
+        <?php
+        // $pages= pagination();
+        // foreach($pages as $page){
+       
+        // ?>
          <ul class="pagination pagination-lg">
             <li><a href="#"><i class="fa fa-long-arrow-left"></i>Previous Page</a></li>
             <li class="active"><a href="#">1</a></li>
@@ -48,6 +53,9 @@ include 'pages/header.php';
             <li><a href="#">5</a></li>
             <li><a href="#">Next Page<i class="fa fa-long-arrow-right"></i></a></li>
           </ul>
+          <?php
+        }
+        ?>
           </div>
           <aside class="col-md-4">
             <div class="widget search">

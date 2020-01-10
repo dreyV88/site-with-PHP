@@ -67,6 +67,22 @@ if (isset($_POST['post'])) {
                     <input type="text" class="form-control" class="form-controlname=" name="titre" id="titre">
 
                 </div>
+                 <div class="form-group col-sm-12">
+                    <label for="categ">Créer une catégorie</label>
+                    <input type="text" class="form-control" class="form-controlname=" name="nomcateg" id="categ">
+                    <button id="catAdd">Ajouter à la liste</button><br>
+                    <label for="liste">Sélectionner une catégorie</label>
+                    <select id='liste'>
+                        <!-- <option value="<?=nomcateg?>"></option> -->
+                    </select>
+                </div>
+               <!-- <div class="form-group col-sm-12">
+                    <label for="titre">Choisir/ Entrer des mots clés</label>
+                    <input type="text" class="form-control" class="form-controlname=" name="titre" id="titre">
+                    <select>
+                        
+                    </select>
+                </div> -->
                 <div class="form-group col-sm-12">
                     <label for="contenu">Contenu de l'article</label>
                     <textarea id= "editor" class="form-control" name="contenu" id="contenu"></textarea>
@@ -97,6 +113,20 @@ if (isset($_POST['post'])) {
         </form>
     </div>
 </div>
+
+<script>
+    // function addOption(){
+        
+    //     var element1= document.createElement("OPTION");
+    //     var txt1=$("#categ").val();
+    //     element1.setAttribute("value",txt1);
+    //     var node1= document.createTextNode(txt1);
+    //     element1.appendChild(node1);
+    //     document.getElementById("liste").appendChild(element1);
+        
+    // }
+    
+</script>
 <!-- <script>
     $(document).ready(function() {
         $('#editor').summernote();
