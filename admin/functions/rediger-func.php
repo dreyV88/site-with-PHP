@@ -64,3 +64,9 @@ function post_img($tmp_name, $extension)
     
     // header('location: index.php?page=article&idarticle=' . $id);
 }
+function showCateg(){
+    global $db;
+    $req1=$db->query("SELECT nomcateg FROM categories");
+    $result = $req1->fetch(PDO::FETCH_OBJ);
+    return $result;
+}

@@ -70,10 +70,16 @@ if (isset($_POST['post'])) {
                  <div class="form-group col-sm-12">
                     <label for="categ">Créer une catégorie</label>
                     <input type="text" class="form-control" class="form-controlname=" name="nomcateg" id="categ">
-                    <button id="catAdd">Ajouter à la liste</button><br>
+                    <button type="submit"id="catAdd">Ajouter à la liste</button><br>
                     <label for="liste">Sélectionner une catégorie</label>
                     <select id='liste'>
-                        <!-- <option value="<?=nomcateg?>"></option> -->
+                        <?php
+                        $cats=showCateg();
+                        foreach($cats as $cat){
+                        ?>
+                        <option value="<?=$cat->nomcateg?>"><?=$cat->nomcateg?></option>
+                        <?php
+                        }?>
                     </select>
                 </div>
                <!-- <div class="form-group col-sm-12">
